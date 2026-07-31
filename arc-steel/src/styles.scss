@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+@use './app/theme/styles/variables';
+@use './app/theme/styles/mixins';
+@use './app/theme/styles/breakpoints';
+@use './app/theme/styles/typography';
+@use './app/theme/styles/spacing';
+@use './app/theme/styles/utilities';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
