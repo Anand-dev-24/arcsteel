@@ -1,1 +1,77 @@
-<p>header works!</p>
+<header class="header">
+
+  <div class="container">
+
+    <a routerLink="/" class="logo">
+      <img src="assets/images/logo.svg" alt="Company Logo">
+    </a>
+
+    <nav class="nav desktop-nav">
+
+      <a routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">
+        Home
+      </a>
+
+      <a routerLink="/services" routerLinkActive="active">
+        Services
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active">
+        Projects
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active">
+        About
+      </a>
+
+      <a routerLink="/careers" routerLinkActive="active">
+        Careers
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+
+    </nav>
+
+    <div class="actions">
+
+      <button class="theme-btn" aria-label="Theme Toggle">
+        🌙
+      </button>
+
+      <button
+        class="hamburger"
+        (click)="toggleMenu()"
+        aria-label="Open Menu">
+
+        ☰
+
+      </button>
+
+    </div>
+
+  </div>
+
+  @if(isMobileMenuOpen()) {
+
+  <nav class="mobile-nav">
+
+    <a routerLink="/" (click)="closeMenu()">Home</a>
+
+    <a routerLink="/services" (click)="closeMenu()">Services</a>
+
+    <a routerLink="/projects" (click)="closeMenu()">Projects</a>
+
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+
+    <a routerLink="/careers" (click)="closeMenu()">Careers</a>
+
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+
+  </nav>
+
+  }
+
+</header>
