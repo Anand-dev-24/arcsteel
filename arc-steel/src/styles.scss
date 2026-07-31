@@ -1,19 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
-/* Global Styles */
-
+@use './app/theme/styles/reset';
 @use './app/theme/styles/variables';
+@use './app/theme/styles/typography';
 @use './app/theme/styles/mixins';
 @use './app/theme/styles/breakpoints';
-@use './app/theme/styles/typography';
-@use './app/theme/styles/spacing';
-@use './app/theme/styles/utilities';
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html,
 body {
   height: 100%;
-  margin: 0;
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #111827;
+  overflow-x: hidden;
 }
