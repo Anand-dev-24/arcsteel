@@ -1,15 +1,24 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { ConfigService } from './core/services/config';
+
+
+export function initializeApp(
+  configService: ConfigService
+) {
+  return () => {
+    configService.load();
+  };
+
+}
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration(),
+    provideRouter(routes),
     provideHttpClient()
-
   ]
 };

@@ -1,22 +1,34 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
 
-  readonly isMobileMenuOpen = signal(false);
+  menuItems = [
+    { title: 'Home', route: '/' },
+    { title: 'Services', route: '/services' },
+    { title: 'Projects', route: '/projects' },
+    { title: 'About', route: '/about' },
+    { title: 'Careers', route: '/careers' },
+    { title: 'Contact', route: '/contact' }
+  ];
 
-  toggleMenu(): void {
-    this.isMobileMenuOpen.update(value => !value);
-  }
-
-  closeMenu(): void {
-    this.isMobileMenuOpen.set(false);
-  }
 }

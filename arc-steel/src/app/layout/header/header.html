@@ -1,77 +1,41 @@
-<header class="header">
+<mat-toolbar class="header">
 
-  <div class="container">
+    <div class="container header-container">
 
-    <a routerLink="/" class="logo">
-      <img src="assets/images/logo.svg" alt="Company Logo">
-    </a>
+        <a routerLink="/" class="logo">
 
-    <nav class="nav desktop-nav">
+            <img
+                src="images/logo.svg"
+                alt="Company Logo">
 
-      <a routerLink="/" routerLinkActive="active"
-         [routerLinkActiveOptions]="{exact:true}">
-        Home
-      </a>
+        </a>
 
-      <a routerLink="/services" routerLinkActive="active">
-        Services
-      </a>
+        <nav class="desktop-menu">
 
-      <a routerLink="/projects" routerLinkActive="active">
-        Projects
-      </a>
+            @for(menu of menuItems; track menu.route){
 
-      <a routerLink="/about" routerLinkActive="active">
-        About
-      </a>
+            <a
+                mat-button
+                [routerLink]="menu.route"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: menu.route === '/'}">
 
-      <a routerLink="/careers" routerLinkActive="active">
-        Careers
-      </a>
+                {{menu.title}}
 
-      <a routerLink="/contact" routerLinkActive="active">
-        Contact
-      </a>
+            </a>
 
-    </nav>
+            }
 
-    <div class="actions">
+        </nav>
 
-      <button class="theme-btn" aria-label="Theme Toggle">
-        🌙
-      </button>
+        <button
+            mat-icon-button
+            class="mobile-menu">
 
-      <button
-        class="hamburger"
-        (click)="toggleMenu()"
-        aria-label="Open Menu">
+            <mat-icon>menu</mat-icon>
 
-        ☰
-
-      </button>
+        </button>
 
     </div>
 
-  </div>
-
-  @if(isMobileMenuOpen()) {
-
-  <nav class="mobile-nav">
-
-    <a routerLink="/" (click)="closeMenu()">Home</a>
-
-    <a routerLink="/services" (click)="closeMenu()">Services</a>
-
-    <a routerLink="/projects" (click)="closeMenu()">Projects</a>
-
-    <a routerLink="/about" (click)="closeMenu()">About</a>
-
-    <a routerLink="/careers" (click)="closeMenu()">Careers</a>
-
-    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
-
-  </nav>
-
-  }
-
-</header>
+</mat-toolbar>
