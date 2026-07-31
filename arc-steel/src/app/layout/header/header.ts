@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+
+import { ConfigService } from '../../core/services/config';
 
 @Component({
   selector: 'app-header',
@@ -22,13 +24,6 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class Header {
 
-  menuItems = [
-    { title: 'Home', route: '/' },
-    { title: 'Services', route: '/services' },
-    { title: 'Projects', route: '/projects' },
-    { title: 'About', route: '/about' },
-    { title: 'Careers', route: '/careers' },
-    { title: 'Contact', route: '/contact' }
-  ];
+  readonly config = inject(ConfigService);
 
 }

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
 import { Shell } from './layout/shell/shell';
+import { ConfigService } from './core/services/config';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,12 @@ import { Shell } from './layout/shell/shell';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {}
+export class App {
+
+  private readonly configService = inject(ConfigService);
+
+  constructor() {
+    this.configService.load();
+  }
+
+}

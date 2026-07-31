@@ -4,23 +4,18 @@
 
         <a routerLink="/" class="logo">
 
-            <img
-                src="images/logo.svg"
-                alt="Company Logo">
+            <img [src]="config.site()?.logo" [alt]="config.site()?.companyName">
 
         </a>
 
         <nav class="desktop-menu">
 
-            @for(menu of menuItems; track menu.route){
+            @for(menu of config.navigation(); track menu.id){
 
-            <a
-                mat-button
-                [routerLink]="menu.route"
-                routerLinkActive="active"
+            <a mat-button [routerLink]="menu.route" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: menu.route === '/'}">
 
-                {{menu.title}}
+                {{ menu.title }}
 
             </a>
 
@@ -28,9 +23,7 @@
 
         </nav>
 
-        <button
-            mat-icon-button
-            class="mobile-menu">
+        <button mat-icon-button class="mobile-menu">
 
             <mat-icon>menu</mat-icon>
 
