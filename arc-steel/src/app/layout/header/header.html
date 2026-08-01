@@ -4,31 +4,80 @@
 
         <a routerLink="/" class="logo">
 
-            <img [src]="config.site()?.logo" [alt]="config.site()?.companyName">
+            <img
+                [src]="config.site()?.logo"
+                [alt]="config.site()?.companyName">
 
         </a>
+
+        <!-- Desktop Menu -->
 
         <nav class="desktop-menu">
 
             @for(menu of config.navigation(); track menu.id){
 
-            <a mat-button [routerLink]="menu.route" routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: menu.route === '/'}">
+                <a
+                    mat-button
+                    [routerLink]="menu.route"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: menu.route === '/'}">
 
-                {{ menu.title }}
+                    {{menu.title}}
 
-            </a>
+                </a>
 
             }
 
         </nav>
 
-        <button mat-icon-button class="mobile-menu">
+        <!-- Mobile Button -->
 
-            <mat-icon>menu</mat-icon>
+        <button
+            mat-icon-button
+            class="mobile-menu"
+            (click)="toggleMenu()">
+
+            <mat-icon>
+
+                {{menuOpen() ? 'close' : 'menu'}}
+
+            </mat-icon>
 
         </button>
 
     </div>
 
 </mat-toolbar>
+
+@if(menuOpen()){
+
+<div
+    class="overlay"
+    (click)="closeMenu()">
+</div>
+
+}
+
+<div
+class="mobile-drawer"
+[class.open]="menuOpen()">
+
+    @for(menu of config.navigation(); track menu.id){
+
+        <a
+
+            [routerLink]="menu.route"
+
+            (click)="closeMenu()"
+
+            routerLinkActive="active"
+
+            [routerLinkActiveOptions]="{exact: menu.route === '/'}">
+
+            {{menu.title}}
+
+        </a>
+
+    }
+
+</div>

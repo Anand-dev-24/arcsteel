@@ -1,0 +1,72 @@
+<section class="services-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>OUR SERVICES</span>
+
+            <h2>Technology Solutions That Drive Growth</h2>
+
+        </div>
+
+        <div class="service-tabs">
+
+            @for(service of services; track $index){
+
+                <button
+                    [class.active]="active()===$index"
+                    (click)="select($index)">
+
+                    {{service.title}}
+
+                </button>
+
+            }
+
+        </div>
+
+        <div class="service-content">
+
+            <div class="service-image">
+
+                <img
+                    [src]="services[active()].image"
+                    [alt]="services[active()].title">
+
+            </div>
+
+            <div class="service-details">
+
+                <h3>{{services[active()].title}}</h3>
+
+                <h4>{{services[active()].subtitle}}</h4>
+
+                <p>{{services[active()].description}}</p>
+
+                <ul>
+
+                    @for(tech of services[active()].technologies; track tech){
+
+                        <li>✔ {{tech}}</li>
+
+                    }
+
+                </ul>
+
+                <a
+                    mat-flat-button
+                    color="primary"
+                    routerLink="/services">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,32 @@
+.section-title {
+
+    text-align: center;
+    margin-bottom: 64px;
+
+}
+
+.subtitle {
+
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+
+}
+
+h2 {
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0;
+
+}
+
+p {
+
+    margin: 20px auto 0;
+    max-width: 720px;
+    color: var(--text-secondary);
+
+}

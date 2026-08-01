@@ -1,0 +1,88 @@
+<section class="hero">
+
+  @for (slide of slides; track $index) {
+
+    <div
+      class="hero-slide"
+      [class.active]="currentSlide() === $index"
+      [style.background-image]="'linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)), url(' + slide.image + ')'">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="badge">
+            DIGITAL TRANSFORMATION PARTNER
+          </span>
+
+          <h1>{{ slide.title }}</h1>
+
+          <p>{{ slide.description }}</p>
+
+          <div class="hero-buttons">
+
+            <a
+              mat-flat-button
+              color="primary"
+              [routerLink]="slide.route">
+
+              Learn More
+
+            </a>
+
+            <button
+              mat-stroked-button>
+
+              Contact Us
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+  <!-- Navigation -->
+
+  <button
+    class="nav prev"
+    (click)="previous()">
+
+    ❮
+
+  </button>
+
+  <button
+    class="nav next"
+    (click)="next()">
+
+    ❯
+
+  </button>
+
+  <!-- Dots -->
+
+  <div class="dots">
+
+    @for(slide of slides; track $index){
+
+      <span
+
+        class="dot"
+
+        [class.active]="currentSlide()===$index"
+
+        (click)="goTo($index)">
+
+      </span>
+
+    }
+
+  </div>
+
+</section>

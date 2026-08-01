@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutPreview } from './about-preview';
+import { Cta } from './home-cta';
 
-describe('AboutPreview', () => {
-  let component: AboutPreview;
-  let fixture: ComponentFixture<AboutPreview>;
+describe('Cta', () => {
+  let component: Cta;
+  let fixture: ComponentFixture<Cta>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AboutPreview],
+      imports: [Cta],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AboutPreview);
+    fixture = TestBed.createComponent(Cta);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

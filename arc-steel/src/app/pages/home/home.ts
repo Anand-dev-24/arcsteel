@@ -1,9 +1,22 @@
 import { Component } from '@angular/core';
 
+import { HomeHero } from './components/home-hero/home-hero';
+import { HomeAboutPreview } from './components/home-about-preview/home-about-preview';
+import { HomeServicesPreview } from './components/home-services-preview/home-services-preview';
+import { HomeProjectsPreview } from './components/home-projects-preview/home-projects-preview';
+import { HomeCta } from './components/home-cta/home-cta';
+
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [
+    HomeHero,
+    HomeServicesPreview,
+    HomeProjectsPreview,
+    HomeAboutPreview,
+    HomeCta
+  ],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styleUrl: './home.scss'
 })
 export class Home {}

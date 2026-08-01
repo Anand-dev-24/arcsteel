@@ -1,0 +1,203 @@
+.hero {
+
+  position: relative;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+
+}
+
+.hero-slide {
+
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transition: opacity .8s ease;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.hero-slide.active {
+
+  opacity: 1;
+  z-index: 2;
+
+}
+
+.hero-content {
+
+  color: white;
+  max-width: 650px;
+
+}
+
+.badge {
+
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,.15);
+
+  backdrop-filter: blur(8px);
+
+  margin-bottom: 24px;
+
+  font-weight: 600;
+
+}
+
+.hero h1 {
+
+  font-size: 64px;
+
+  line-height: 1.1;
+
+  margin-bottom: 24px;
+
+}
+
+.hero p {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+
+  opacity: .9;
+
+}
+
+.hero-buttons {
+
+  display: flex;
+
+  gap: 16px;
+
+}
+
+.nav {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 48px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.2);
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+}
+
+.prev {
+
+  left: 30px;
+
+}
+
+.next {
+
+  right: 30px;
+
+}
+
+.dots {
+
+  position: absolute;
+
+  bottom: 35px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 12px;
+
+  z-index: 10;
+
+}
+
+.dot {
+
+  width: 12px;
+
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.45);
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+.dot.active {
+
+  width: 34px;
+
+  border-radius: 20px;
+
+  background: white;
+
+}
+
+@media (max-width:768px){
+
+.hero{
+
+height:80vh;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.nav{
+
+display:none;
+
+}
+
+}

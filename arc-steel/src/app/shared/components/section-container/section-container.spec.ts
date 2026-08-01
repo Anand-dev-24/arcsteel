@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServicesPreview } from './services-preview';
+import { SectionContainer } from './section-container';
 
-describe('ServicesPreview', () => {
-  let component: ServicesPreview;
-  let fixture: ComponentFixture<ServicesPreview>;
+describe('SectionContainer', () => {
+  let component: SectionContainer;
+  let fixture: ComponentFixture<SectionContainer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ServicesPreview],
+      imports: [SectionContainer],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ServicesPreview);
+    fixture = TestBed.createComponent(SectionContainer);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

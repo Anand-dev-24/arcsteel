@@ -1,0 +1,41 @@
+[
+  {
+    "id": "web-development",
+    "title": "Web Development",
+    "subtitle": "Enterprise Web Solutions",
+    "description": "We build responsive websites, portals and enterprise web applications using Angular, Java, .NET and modern cloud technologies.",
+    "image": "images/services/web-development.jpg",
+    "technologies": [
+      "Angular",
+      "Java",
+      ".NET",
+      "Spring Boot"
+    ]
+  },
+  {
+    "id": "mobile-development",
+    "title": "Mobile Apps",
+    "subtitle": "Android & iOS",
+    "description": "Cross-platform and native mobile applications with modern UI and seamless performance.",
+    "image": "images/services/mobile.jpg",
+    "technologies": [
+      "Flutter",
+      "Android",
+      "iOS",
+      "Firebase"
+    ]
+  },
+  {
+    "id": "cloud-solutions",
+    "title": "Cloud & DevOps",
+    "subtitle": "Cloud Infrastructure",
+    "description": "AWS, Azure, Kubernetes, Docker and CI/CD automation for scalable deployments.",
+    "image": "images/services/cloud.jpg",
+    "technologies": [
+      "AWS",
+      "Azure",
+      "Docker",
+      "Kubernetes"
+    ]
+  }
+]

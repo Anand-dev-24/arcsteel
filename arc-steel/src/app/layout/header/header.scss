@@ -1,64 +1,163 @@
 .header {
 
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top:0;
+    z-index:1000;
 
-    background: white;
-    border-bottom: 1px solid #ececec;
-}
+    background:#fff;
 
-.header-container {
+    border-bottom:1px solid #ececec;
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    width: 100%;
-}
-
-.logo img {
-
-    height: 48px;
+    box-shadow:0 2px 15px rgba(0,0,0,.04);
 
 }
 
-.desktop-menu {
+.header-container{
 
-    display: flex;
+    display:flex;
 
-    gap: 8px;
+    justify-content:space-between;
 
-}
+    align-items:center;
 
-.desktop-menu a.active {
-
-    color: var(--primary);
-
-    font-weight: 600;
+    width:100%;
 
 }
 
-.mobile-menu {
+.logo img{
 
-    display: none;
+    height:50px;
+
+}
+
+.desktop-menu{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.desktop-menu a.active{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.mobile-menu{
+
+    display:none;
+
+}
+
+/* ---------- MOBILE DRAWER ---------- */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:999;
+
+}
+
+.mobile-drawer{
+
+    position:fixed;
+
+    top:0;
+
+    right:-320px;
+
+    width:300px;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:1001;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:90px 24px;
+
+    gap:8px;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.08);
+
+}
+
+.mobile-drawer.open{
+
+    right:0;
+
+}
+
+.mobile-drawer a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    font-weight:500;
+
+}
+
+.mobile-drawer a:hover{
+
+    background:#f5f5f5;
+
+}
+
+.mobile-drawer a.active{
+
+    color:var(--primary);
+
+    background:#EEF4FF;
 
 }
 
 @media(max-width:768px){
 
-    .desktop-menu{
+.desktop-menu{
 
-        display:none;
+display:none;
 
-    }
+}
 
-    .mobile-menu{
+.mobile-menu{
 
-        display:block;
+display:block;
 
-    }
+}
+
+}
+
+@media(min-width:769px){
+
+.mobile-drawer{
+
+display:none;
+
+}
+
+.overlay{
+
+display:none;
+
+}
 
 }
