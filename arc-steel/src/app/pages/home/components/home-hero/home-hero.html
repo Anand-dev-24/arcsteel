@@ -1,88 +1,80 @@
-<section class="hero">
+<!-- ===========================================
+ HERO SECTION
+============================================ -->
 
-  @for (slide of slides; track $index) {
+<section id="home" class="hero">
 
-    <div
-      class="hero-slide"
-      [class.active]="currentSlide() === $index"
-      [style.background-image]="'linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)), url(' + slide.image + ')'">
+    <div class="hero-slider">
 
-      <div class="container">
+        <div
+            *ngFor="let slide of heroSlides; let i=index"
+            class="hero-slide"
+            [class.active]="currentSlide==i"
+            [style.backgroundImage]="'url(' + slide.image + ')'">
 
-        <div class="hero-content">
+            <div class="overlay"></div>
 
-          <span class="badge">
-            DIGITAL TRANSFORMATION PARTNER
-          </span>
+            <div class="container">
 
-          <h1>{{ slide.title }}</h1>
+                <div class="hero-content">
 
-          <p>{{ slide.description }}</p>
+                    <h1>
 
-          <div class="hero-buttons">
+                        {{slide.title}}
 
-            <a
-              mat-flat-button
-              color="primary"
-              [routerLink]="slide.route">
+                    </h1>
 
-              Learn More
+                    <p>
 
-            </a>
+                        {{slide.subtitle}}
 
-            <button
-              mat-stroked-button>
+                    </p>
 
-              Contact Us
+                    <button class="btn btn-primary btn-lg">
 
-            </button>
+                        Learn More
 
-          </div>
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
+        <!-- Previous -->
+
+        <button
+            class="slider-btn prev"
+            (click)="previousSlide()">
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+        <!-- Next -->
+
+        <button
+            class="slider-btn next"
+            (click)="nextSlide()">
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+        <!-- Dots -->
+
+        <div class="slider-dots">
+
+            <span
+                *ngFor="let slide of heroSlides; let i=index"
+                [class.active]="currentSlide==i"
+                (click)="currentSlide=i">
+
+            </span>
+
+        </div>
 
     </div>
-
-  }
-
-  <!-- Navigation -->
-
-  <button
-    class="nav prev"
-    (click)="previous()">
-
-    ❮
-
-  </button>
-
-  <button
-    class="nav next"
-    (click)="next()">
-
-    ❯
-
-  </button>
-
-  <!-- Dots -->
-
-  <div class="dots">
-
-    @for(slide of slides; track $index){
-
-      <span
-
-        class="dot"
-
-        [class.active]="currentSlide()===$index"
-
-        (click)="goTo($index)">
-
-      </span>
-
-    }
-
-  </div>
 
 </section>

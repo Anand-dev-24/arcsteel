@@ -1,90 +1,165 @@
 .services-section{
+
     padding:100px 0;
-    background:#F8FAFC;
+
+    background:#f8f9fa;
+
 }
 
-.section-header{
-    text-align:center;
-    margin-bottom:50px;
-}
+.section-subtitle{
 
-.section-header span{
-    color:var(--primary);
+    color:#0d6efd;
+
     font-weight:700;
+
+    letter-spacing:2px;
+
 }
 
-.section-header h2{
+.section-title{
+
     font-size:42px;
+
+    font-weight:700;
+
     margin-top:10px;
+
 }
+
+/* Tabs */
 
 .service-tabs{
+
     display:flex;
+
     justify-content:center;
-    gap:16px;
+
     flex-wrap:wrap;
-    margin-bottom:50px;
+
+    gap:15px;
+
 }
 
-.service-tabs button{
+.service-btn{
+
     border:none;
-    padding:14px 24px;
-    border-radius:30px;
-    cursor:pointer;
-    background:#fff;
-    transition:.3s;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    background:white;
+
     font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
 }
 
-.service-tabs button.active{
-    background:var(--primary);
-    color:#fff;
+.service-btn:hover{
+
+    background:#0d6efd;
+
+    color:white;
+
 }
 
-.service-content{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.service-btn.active{
+
+    background:#0d6efd;
+
+    color:white;
+
 }
 
-.service-image img{
-    width:100%;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
+/* Content */
 
-.service-details h3{
-    font-size:36px;
-    margin-bottom:10px;
-}
+h3{
 
-.service-details h4{
-    color:var(--primary);
+    font-size:34px;
+
+    font-weight:700;
+
     margin-bottom:20px;
+
 }
 
-.service-details p{
-    color:#64748B;
+p{
+
+    color:#666;
+
     line-height:1.8;
+
 }
 
-.service-details ul{
+ul{
+
     list-style:none;
+
     padding:0;
-    margin:30px 0;
+
+    margin-top:25px;
+
 }
 
-.service-details li{
-    margin-bottom:12px;
+li{
+
+    margin-bottom:15px;
+
 }
 
-@media(max-width:992px){
-    .service-content{
-        grid-template-columns:1fr;
+li i{
+
+    color:#0d6efd;
+
+    margin-right:10px;
+
+}
+
+img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+@media(max-width:991px){
+
+    img{
+
+        margin-top:40px;
+
+        height:320px;
+
     }
 
-    .service-details{
-        text-align:center;
+}
+
+@media(max-width:768px){
+
+    .section-title{
+
+        font-size:30px;
+
     }
+
+    h3{
+
+        font-size:26px;
+
+    }
+
+    .service-btn{
+
+        width:100%;
+
+    }
+
 }

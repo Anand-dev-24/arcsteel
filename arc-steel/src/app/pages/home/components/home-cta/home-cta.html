@@ -1,5 +1,218 @@
-<section class="section">
+<section id="contact" class="contact-section">
+
     <div class="container">
-        <h2>CTA</h2>
+
+        <div class="text-center mb-5">
+
+            <h6 class="section-subtitle">
+
+                CONTACT US
+
+            </h6>
+
+            <h2 class="section-title">
+
+                Let's Discuss Your Next Project
+
+            </h2>
+
+            <p>
+
+                Tell us about your structural steel detailing requirements,
+                and our engineering team will get back to you.
+
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <!-- Left Side -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info">
+
+                    <h3>
+
+                        Get In Touch
+
+                    </h3>
+
+                    <p>
+
+                        We provide structural steel detailing, BIM modeling,
+                        connection design, and fabrication drawings for
+                        clients worldwide.
+
+                    </p>
+
+                    <div class="info-box">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <div>
+
+                            <h5>Office</h5>
+
+                            <span>Chennai, Tamil Nadu, India</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-box">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        <div>
+
+                            <h5>Email</h5>
+
+                            <span>info@yourcompany.com</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-box">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        <div>
+
+                            <h5>Phone</h5>
+
+                            <span>+91 98765 43210</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-lg-7">
+
+                <form
+                    [formGroup]="contactForm"
+                    (ngSubmit)="onSubmit()">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-4">
+
+                            <input
+                                class="form-control"
+                                placeholder="Full Name"
+                                formControlName="fullName">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <input
+                                class="form-control"
+                                placeholder="Company Name"
+                                formControlName="company">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Email Address"
+                                formControlName="email">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <input
+                                class="form-control"
+                                placeholder="Phone Number"
+                                formControlName="phone">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <input
+                                class="form-control"
+                                placeholder="Country"
+                                formControlName="country">
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <select
+                                class="form-select"
+                                formControlName="service">
+
+                                <option value="">
+                                    Select Service
+                                </option>
+
+                                <option>
+                                    Structural Steel Detailing
+                                </option>
+
+                                <option>
+                                    Tekla BIM Modeling
+                                </option>
+
+                                <option>
+                                    Connection Design
+                                </option>
+
+                                <option>
+                                    Fabrication Drawings
+                                </option>
+
+                                <option>
+                                    Project Coordination
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12 mb-4">
+
+                            <textarea
+                                rows="6"
+                                class="form-control"
+                                placeholder="Tell us about your project..."
+                                formControlName="message"></textarea>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <button
+                                class="btn btn-primary px-5 py-3"
+                                type="submit">
+
+                                Send Inquiry
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>

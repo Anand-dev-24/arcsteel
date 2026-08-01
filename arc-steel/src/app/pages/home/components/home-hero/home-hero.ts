@@ -22,61 +22,75 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class HomeHero implements OnInit, OnDestroy {
 
-  slides = [
+  currentSlide = 0;
+
+  intervalId: any;
+
+  heroSlides = [
+
     {
-      title: 'Engineering Digital Excellence',
-      description:
-        'Delivering enterprise software, business websites and cloud solutions.',
-      image: 'images/hero/hero1.jpg',
-      route: '/services'
+      image: 'images/hero/hero_1.jpg',
+      title: 'Structural Steel Detailing',
+      subtitle: 'Accurate. Reliable. Delivered On Time.'
     },
+
     {
-      title: 'Modern Web Applications',
-      description:
-        'Scalable, responsive and secure Angular applications.',
-      image: 'images/hero/hero2.jpg',
-      route: '/services'
+      image: 'images/hero/hero_2.jpg',
+      title: 'Tekla BIM Modeling',
+      subtitle: 'High Precision 3D Models'
     },
+
     {
-      title: 'Cloud & DevOps',
-      description:
-        'Accelerate your business with cloud-native technologies.',
-      image: 'images/hero/hero3.jpg',
-      route: '/services'
+      image: 'images/hero/hero_3.jpg',
+      title: 'Connection Design',
+      subtitle: 'Safe and Cost Effective Solutions'
+    },
+
+    {
+      image: 'images/hero/hero_4.jpg',
+      title: 'Fabrication Drawings',
+      subtitle: 'Shop Drawings Ready For Production'
+    },
+
+    {
+      image: 'images/hero/hero_2.jpg',
+      title: 'Global Engineering Services',
+      subtitle: 'Supporting Projects Worldwide'
     }
+
   ];
 
-  currentSlide = signal(0);
-
-  private timer?: ReturnType<typeof setInterval>;
-
-  ngOnInit(): void {
+  ngOnInit() {
     this.startSlider();
   }
 
-  ngOnDestroy(): void {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
   }
 
-  startSlider(): void {
-    this.timer = setInterval(() => {
-      this.next();
+  startSlider() {
+
+    this.intervalId = setInterval(() => {
+
+      this.nextSlide();
+
     }, 5000);
+
   }
 
-  next(): void {
-    this.currentSlide.update(v => (v + 1) % this.slides.length);
+  nextSlide() {
+
+    this.currentSlide =
+      (this.currentSlide + 1) % this.heroSlides.length;
+
   }
 
-  previous(): void {
-    this.currentSlide.update(v =>
-      v === 0 ? this.slides.length - 1 : v - 1
-    );
+  previousSlide() {
+
+    this.currentSlide =
+      (this.currentSlide - 1 + this.heroSlides.length)
+      % this.heroSlides.length;
+
   }
 
-  goTo(index: number): void {
-    this.currentSlide.set(index);
-  }
 }

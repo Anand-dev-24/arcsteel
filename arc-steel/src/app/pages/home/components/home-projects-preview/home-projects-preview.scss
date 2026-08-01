@@ -1,8 +1,102 @@
-.section{
-    padding:100px 0;
+.projects-section {
+
+    padding: 100px 0;
+    background: #ffffff;
+
 }
 
-h2{
-    text-align:center;
-    font-size:42px;
+.project-tabs {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+}
+
+.project-btn {
+
+    border: none;
+    background: #f3f3f3;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .3s;
+
+}
+
+.project-btn.active {
+
+    background: #0d6efd;
+    color: #fff;
+
+}
+
+.project-image img {
+
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+
+}
+
+.project-content {
+
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+
+}
+
+.project-content h3 {
+
+    font-size: 36px;
+    font-weight: 700;
+
+}
+
+.project-content p {
+
+    color: #666;
+    line-height: 1.8;
+    margin-top: 20px;
+
+}
+
+.info-card {
+
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+
+}
+
+.info-card h5 {
+
+    color: #0d6efd;
+    margin-bottom: 10px;
+
+}
+
+@media(max-width:768px){
+
+    .project-image img{
+
+        height:300px;
+
+    }
+
+    .project-content h3{
+
+        font-size:28px;
+
+    }
+
+    .project-btn{
+
+        width:100%;
+
+    }
+
 }

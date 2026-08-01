@@ -1,67 +1,86 @@
-<section class="services-section">
+<section class="services-section" id="services">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="text-center mb-5">
 
-            <span>OUR SERVICES</span>
+            <h6 class="section-subtitle">
+                OUR SERVICES
+            </h6>
 
-            <h2>Technology Solutions That Drive Growth</h2>
+            <h2 class="section-title">
+                Comprehensive Steel Detailing Solutions
+            </h2>
 
         </div>
 
+        <!-- Service Buttons -->
+
         <div class="service-tabs">
 
-            @for(service of services; track $index){
+            @for(service of services; track $index; let i = $index){
 
-                <button
-                    [class.active]="active()===$index"
-                    (click)="select($index)">
+            <button
+                class="service-btn"
+                [class.active]="selectedService === i"
+                (click)="selectedService = i">
 
-                    {{service.title}}
+                {{service.title}}
 
-                </button>
+            </button>
 
             }
 
         </div>
 
-        <div class="service-content">
+        <!-- Selected Service -->
 
-            <div class="service-image">
+        <div class="row align-items-center mt-5">
 
-                <img
-                    [src]="services[active()].image"
-                    [alt]="services[active()].title">
+            <div class="col-lg-6">
 
-            </div>
+                <h3>
 
-            <div class="service-details">
+                    {{services[selectedService].title}}
 
-                <h3>{{services[active()].title}}</h3>
+                </h3>
 
-                <h4>{{services[active()].subtitle}}</h4>
+                <p>
 
-                <p>{{services[active()].description}}</p>
+                    {{services[selectedService].description}}
+
+                </p>
 
                 <ul>
 
-                    @for(tech of services[active()].technologies; track tech){
+                    @for(feature of services[selectedService].features; track $index){
 
-                        <li>✔ {{tech}}</li>
+                    <li>
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        {{feature}}
+
+                    </li>
 
                     }
 
                 </ul>
 
-                <a
-                    mat-flat-button
-                    color="primary"
-                    routerLink="/services">
+                <button class="btn btn-primary mt-3">
 
                     Learn More
 
-                </a>
+                </button>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <img
+                    [src]="services[selectedService].image"
+                    class="img-fluid rounded shadow"
+                    [alt]="services[selectedService].title">
 
             </div>
 

@@ -1,163 +1,78 @@
+/*============================
+ Header
+============================*/
+
 .header {
 
-    position: sticky;
-    top:0;
-    z-index:1000;
-
-    background:#fff;
-
-    border-bottom:1px solid #ececec;
-
-    box-shadow:0 2px 15px rgba(0,0,0,.04);
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    z-index: 999;
 
 }
 
-.header-container{
+.navbar {
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    width:100%;
+    padding: 15px 0;
 
 }
 
-.logo img{
+.navbar-brand img{
 
-    height:50px;
-
-}
-
-.desktop-menu{
-
-    display:flex;
-
-    gap:8px;
+    height:55px;
+    width:auto;
 
 }
 
-.desktop-menu a.active{
+.navbar-nav{
 
-    color:var(--primary);
+    gap:20px;
 
+}
+
+.nav-link{
+
+    color:#1b1b1b;
     font-weight:600;
+    font-size:16px;
+    transition:.3s;
 
 }
 
-.mobile-menu{
+.nav-link:hover{
 
-    display:none;
-
-}
-
-/* ---------- MOBILE DRAWER ---------- */
-
-.overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    z-index:999;
+    color:#0056b3;
 
 }
 
-.mobile-drawer{
+.navbar-toggler{
 
-    position:fixed;
-
-    top:0;
-
-    right:-320px;
-
-    width:300px;
-
-    height:100vh;
-
-    background:white;
-
-    z-index:1001;
-
-    transition:.35s;
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:90px 24px;
-
-    gap:8px;
-
-    box-shadow:-10px 0 30px rgba(0,0,0,.08);
+    border:none;
 
 }
 
-.mobile-drawer.open{
+.navbar-toggler:focus{
 
-    right:0;
-
-}
-
-.mobile-drawer a{
-
-    text-decoration:none;
-
-    color:#333;
-
-    padding:16px;
-
-    border-radius:10px;
-
-    font-weight:500;
+    box-shadow:none;
 
 }
 
-.mobile-drawer a:hover{
+/* Mobile */
 
-    background:#f5f5f5;
+@media(max-width:991px){
 
-}
+    .navbar-collapse{
 
-.mobile-drawer a.active{
+        margin-top:15px;
+        background:#fff;
+        padding:15px;
+        border-radius:10px;
 
-    color:var(--primary);
+    }
 
-    background:#EEF4FF;
+    .navbar-nav{
 
-}
+        gap:10px;
 
-@media(max-width:768px){
-
-.desktop-menu{
-
-display:none;
-
-}
-
-.mobile-menu{
-
-display:block;
-
-}
-
-}
-
-@media(min-width:769px){
-
-.mobile-drawer{
-
-display:none;
-
-}
-
-.overlay{
-
-display:none;
-
-}
+    }
 
 }

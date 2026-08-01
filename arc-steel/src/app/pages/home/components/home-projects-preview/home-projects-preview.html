@@ -1,5 +1,129 @@
-<section class="section">
+<section class="projects-section" id="projects">
+
     <div class="container">
-        <h2>Projects</h2>
+
+        <div class="text-center mb-5">
+
+            <h6 class="section-subtitle">
+
+                OUR PROJECTS
+
+            </h6>
+
+            <h2 class="section-title">
+
+                Featured Structural Steel Projects
+
+            </h2>
+
+        </div>
+
+        <!-- Tabs -->
+
+        <div class="project-tabs">
+
+            @for(project of projects; track $index; let i = $index){
+
+                <button
+                    class="project-btn"
+                    [class.active]="selectedProject===i"
+                    (click)="selectedProject=i">
+
+                    {{project.title}}
+
+                </button>
+
+            }
+
+        </div>
+
+        <!-- Image -->
+
+        <div class="project-image mt-5">
+
+            <img
+                [src]="projects[selectedProject].image"
+                class="img-fluid rounded shadow"
+                [alt]="projects[selectedProject].title">
+
+        </div>
+
+        <!-- Details -->
+
+        <div class="project-content mt-4">
+
+            <h3>
+
+                {{projects[selectedProject].title}}
+
+            </h3>
+
+            <p>
+
+                {{projects[selectedProject].description}}
+
+            </p>
+
+            <div class="row mt-4">
+
+                <div class="col-md-4">
+
+                    <div class="info-card">
+
+                        <h5>Location</h5>
+
+                        <span>
+
+                            {{projects[selectedProject].location}}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="info-card">
+
+                        <h5>Steel Tonnage</h5>
+
+                        <span>
+
+                            {{projects[selectedProject].tonnage}}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="info-card">
+
+                        <h5>Software</h5>
+
+                        <span>
+
+                            {{projects[selectedProject].software}}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary mt-4">
+
+                Learn More
+
+            </button>
+
+        </div>
+
     </div>
+
 </section>

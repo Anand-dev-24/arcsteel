@@ -1,83 +1,97 @@
-<mat-toolbar class="header">
+<!-- ================= HEADER ================= -->
 
-    <div class="container header-container">
+<header class="header sticky-top">
 
-        <a routerLink="/" class="logo">
+    <nav class="navbar navbar-expand-lg">
 
-            <img
-                [src]="config.site()?.logo"
-                [alt]="config.site()?.companyName">
+        <div class="container">
 
-        </a>
+            <!-- Logo -->
 
-        <!-- Desktop Menu -->
+            <a class="navbar-brand" href="#home">
 
-        <nav class="desktop-menu">
+                <img
+                    src="images/logo.jpeg"
+                    alt="Company Logo">
 
-            @for(menu of config.navigation(); track menu.id){
+            </a>
 
-                <a
-                    mat-button
-                    [routerLink]="menu.route"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: menu.route === '/'}">
+            <!-- Mobile Toggle -->
 
-                    {{menu.title}}
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-                </a>
+                <span class="navbar-toggler-icon"></span>
 
-            }
+            </button>
 
-        </nav>
+            <!-- Menu -->
 
-        <!-- Mobile Button -->
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarMenu">
 
-        <button
-            mat-icon-button
-            class="mobile-menu"
-            (click)="toggleMenu()">
+                <ul class="navbar-nav">
 
-            <mat-icon>
+                    <li class="nav-item">
 
-                {{menuOpen() ? 'close' : 'menu'}}
+                        <a
+                            class="nav-link"
+                            href="#home">
+                            Home
+                        </a>
 
-            </mat-icon>
+                    </li>
 
-        </button>
+                    <li class="nav-item">
 
-    </div>
+                        <a
+                            class="nav-link"
+                            href="#about">
+                            About Us
+                        </a>
 
-</mat-toolbar>
+                    </li>
 
-@if(menuOpen()){
+                    <li class="nav-item">
 
-<div
-    class="overlay"
-    (click)="closeMenu()">
-</div>
+                        <a
+                            class="nav-link"
+                            href="#services">
+                            Services
+                        </a>
 
-}
+                    </li>
 
-<div
-class="mobile-drawer"
-[class.open]="menuOpen()">
+                    <li class="nav-item">
 
-    @for(menu of config.navigation(); track menu.id){
+                        <a
+                            class="nav-link"
+                            href="#projects">
+                            Projects
+                        </a>
 
-        <a
+                    </li>
 
-            [routerLink]="menu.route"
+                    <li class="nav-item">
 
-            (click)="closeMenu()"
+                        <a
+                            class="nav-link"
+                            href="#contact">
+                            Contact Us
+                        </a>
 
-            routerLinkActive="active"
+                    </li>
 
-            [routerLinkActiveOptions]="{exact: menu.route === '/'}">
+                </ul>
 
-            {{menu.title}}
+            </div>
 
-        </a>
+        </div>
 
-    }
+    </nav>
 
-</div>
+</header>
