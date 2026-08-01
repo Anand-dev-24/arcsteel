@@ -1,39 +1,107 @@
-import { Component, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  Component,
+  HostListener,
+  inject,
+  PLATFORM_ID,
+  signal
+} from '@angular/core';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import {
+  CommonModule,
+  DOCUMENT,
+  isPlatformBrowser
+} from '@angular/common';
 
-import { ConfigService } from '../../core/services/config';
+interface MenuItem {
+  label: string;
+  target: string;
+}
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    RouterLinkActive,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
 
-  readonly config = inject(ConfigService);
+  private readonly document = inject(DOCUMENT);
+  private readonly platformId = inject(PLATFORM_ID);
 
-  readonly menuOpen = signal(false);
+  readonly isMenuOpen = signal(false);
+  readonly isScrolled = signal(false);
 
-  toggleMenu() {
-    this.menuOpen.update(v => !v);
+  readonly menus: MenuItem[] = [
+    { label: 'Home', target: 'home' },
+    { label: 'About Us', target: 'about' },
+    { label: 'Services', target: 'services' },
+    { label: 'Projects', target: 'projects' },
+    { label: 'Contact Us', target: 'contact' }
+  ];
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    this.isScrolled.set(window.scrollY > 20);
+
   }
 
-  closeMenu() {
-    this.menuOpen.set(false);
+  toggleMenu(): void {
+
+    this.isMenuOpen.update(value => !value);
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    this.document.body.style.overflow =
+      this.isMenuOpen() ? 'hidden' : '';
+
+  }
+
+  closeMenu(): void {
+
+    this.isMenuOpen.set(false);
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    this.document.body.style.overflow = '';
+
+  }
+
+  scrollTo(id: string): void {
+
+    this.closeMenu();
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const section = this.document.getElementById(id);
+
+    if (!section) {
+      return;
+    }
+
+    const offset = 85;
+
+    const top =
+      section.getBoundingClientRect().top +
+      window.scrollY -
+      offset;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
+
   }
 
 }

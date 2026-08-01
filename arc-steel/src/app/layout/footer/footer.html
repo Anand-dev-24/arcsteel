@@ -4,26 +4,40 @@
 
         <div class="row gy-5">
 
-            <!-- Company -->
+            <!-- ==========================
+                 COMPANY
+            =========================== -->
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4">
 
                 <img
                     src="assets/images/logo-white.png"
-                    class="footer-logo"
-                    alt="Company Logo">
+                    alt="ARC Steel"
+                    class="footer-logo">
 
                 <p class="footer-about">
 
-                    Delivering world-class Structural Steel Detailing,
-                    BIM Modeling, Connection Design and Fabrication
-                    Drawings with precision, quality and timely delivery.
+                    ARC Steel delivers high-quality Structural Steel Detailing,
+                    BIM Modelling, Shop Drawings and Connection Detailing
+                    services for fabricators, contractors and consultants
+                    worldwide.
 
                 </p>
 
+                <div class="social-links">
+
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+
+                </div>
+
             </div>
 
-            <!-- Quick Links -->
+            <!-- ==========================
+                 QUICK LINKS
+            =========================== -->
 
             <div class="col-lg-2 col-md-6">
 
@@ -31,21 +45,27 @@
 
                 <ul>
 
-                    <li><a href="#home">Home</a></li>
+                    @for(link of quickLinks; track link){
 
-                    <li><a href="#about">About Us</a></li>
+                        <li>
 
-                    <li><a href="#services">Services</a></li>
+                            <a href="#">
 
-                    <li><a href="#projects">Projects</a></li>
+                                {{ link }}
 
-                    <li><a href="#contact">Contact</a></li>
+                            </a>
+
+                        </li>
+
+                    }
 
                 </ul>
 
             </div>
 
-            <!-- Services -->
+            <!-- ==========================
+                 SERVICES
+            =========================== -->
 
             <div class="col-lg-3 col-md-6">
 
@@ -53,25 +73,31 @@
 
                 <ul>
 
-                    <li>Steel Detailing</li>
+                    @for(service of services; track service){
 
-                    <li>Tekla BIM Modeling</li>
+                        <li>
 
-                    <li>Connection Design</li>
+                            <a href="#">
 
-                    <li>Fabrication Drawings</li>
+                                {{ service }}
 
-                    <li>Project Coordination</li>
+                            </a>
+
+                        </li>
+
+                    }
 
                 </ul>
 
             </div>
 
-            <!-- Contact -->
+            <!-- ==========================
+                 CONTACT
+            =========================== -->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3">
 
-                <h5>Contact Info</h5>
+                <h5>Contact</h5>
 
                 <ul class="contact-list">
 
@@ -87,7 +113,7 @@
 
                         <i class="bi bi-envelope-fill"></i>
 
-                        info@yourcompany.com
+                        info@arcsteel.com
 
                     </li>
 
@@ -99,35 +125,15 @@
 
                     </li>
 
+                    <li>
+
+                        <i class="bi bi-clock-fill"></i>
+
+                        Mon - Sat | 9 AM - 6 PM
+
+                    </li>
+
                 </ul>
-
-                <div class="social-icons">
-
-                    <a href="#">
-
-                        <i class="bi bi-facebook"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="bi bi-linkedin"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="bi bi-instagram"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="bi bi-twitter-x"></i>
-
-                    </a>
-
-                </div>
 
             </div>
 
@@ -135,11 +141,21 @@
 
         <hr>
 
-        <div class="copyright">
+        <div class="footer-bottom">
 
-            © {{currentYear}}
-            Your Company Name.
-            All Rights Reserved.
+            <span>
+
+                © {{ year }} ARC Steel. All Rights Reserved.
+
+            </span>
+
+            <div>
+
+                <a href="#">Privacy Policy</a>
+
+                <a href="#">Terms & Conditions</a>
+
+            </div>
 
         </div>
 

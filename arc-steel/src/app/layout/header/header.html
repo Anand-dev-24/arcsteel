@@ -1,97 +1,185 @@
-<!-- ================= HEADER ================= -->
+<header class="header" [class.scrolled]="isScrolled()">
 
-<header class="header sticky-top">
+    <div class="container">
 
-    <nav class="navbar navbar-expand-lg">
+        <nav class="navbar-custom">
 
-        <div class="container">
+            <!-- ==========================
+                 Logo
+            =========================== -->
 
-            <!-- Logo -->
+            <a class="logo" (click)="scrollTo('home')">
 
-            <a class="navbar-brand" href="#home">
-
+                <!-- Replace with your logo -->
                 <img
                     src="images/logo.jpeg"
-                    alt="Company Logo">
+                    alt="ARC Steel">
+
+                <!--
+                OR
+
+                <span>ARC STEEL</span>
+
+                -->
 
             </a>
 
-            <!-- Mobile Toggle -->
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu">
 
-                <span class="navbar-toggler-icon"></span>
+            <!-- ==========================
+                 Desktop Menu
+            =========================== -->
 
-            </button>
+            <ul class="desktop-menu">
 
-            <!-- Menu -->
+                @for(menu of menus; track menu.target){
 
-            <div
-                class="collapse navbar-collapse justify-content-end"
-                id="navbarMenu">
+                    <li>
 
-                <ul class="navbar-nav">
+                        <button
+                            type="button"
+                            (click)="scrollTo(menu.target)">
 
-                    <li class="nav-item">
+                            {{menu.label}}
 
-                        <a
-                            class="nav-link"
-                            href="#home">
-                            Home
-                        </a>
+                        </button>
 
                     </li>
 
-                    <li class="nav-item">
+                }
 
-                        <a
-                            class="nav-link"
-                            href="#about">
-                            About Us
-                        </a>
+            </ul>
 
-                    </li>
 
-                    <li class="nav-item">
 
-                        <a
-                            class="nav-link"
-                            href="#services">
-                            Services
-                        </a>
+            <!-- ==========================
+                 Right Side
+            =========================== -->
 
-                    </li>
+            <div class="right-section">
 
-                    <li class="nav-item">
+                <button
+                    class="quote-btn"
+                    (click)="scrollTo('contact')">
 
-                        <a
-                            class="nav-link"
-                            href="#projects">
-                            Projects
-                        </a>
+                    Get Quote
 
-                    </li>
+                    <i class="bi bi-arrow-right"></i>
 
-                    <li class="nav-item">
+                </button>
 
-                        <a
-                            class="nav-link"
-                            href="#contact">
-                            Contact Us
-                        </a>
 
-                    </li>
 
-                </ul>
+                <!-- ==========================
+                     Hamburger
+                =========================== -->
+
+                <button
+
+                    class="hamburger"
+
+                    (click)="toggleMenu()"
+
+                    aria-label="Menu">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </button>
 
             </div>
 
-        </div>
+        </nav>
 
-    </nav>
+    </div>
 
 </header>
+
+
+
+<!-- ==========================================
+     Mobile Overlay
+========================================== -->
+
+<div
+
+class="mobile-overlay"
+
+[class.show]="isMenuOpen()"
+
+(click)="closeMenu()">
+
+</div>
+
+
+
+<!-- ==========================================
+     Mobile Menu
+========================================== -->
+
+<div
+
+class="mobile-menu"
+
+[class.open]="isMenuOpen()">
+
+
+    <div class="mobile-header">
+
+        <img
+
+        src="assets/images/logo.png"
+
+        alt="Logo">
+
+
+        <button
+
+        class="close-btn"
+
+        (click)="closeMenu()">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <div class="mobile-links">
+
+        @for(menu of menus; track menu.target){
+
+            <button
+
+            (click)="scrollTo(menu.target)">
+
+                {{menu.label}}
+
+            </button>
+
+        }
+
+    </div>
+
+
+
+    <div class="mobile-bottom">
+
+        <button
+
+        class="quote-btn"
+
+        (click)="scrollTo('contact')">
+
+            Request Quote
+
+        </button>
+
+    </div>
+
+</div>

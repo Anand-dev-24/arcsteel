@@ -1,53 +1,456 @@
-@use './app/theme/styles/reset';
-@use './app/theme/styles/variables';
-@use './app/theme/styles/typography';
-@use './app/theme/styles/mixins';
-@use './app/theme/styles/breakpoints';
-@use './app/theme/styles/themes';
+/*==========================================================
+  GLOBAL STYLES
+  Structural Steel Detailing Company
+==========================================================*/
 
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+/*==========================================================
+  THEME VARIABLES
+==========================================================*/
+
+:root {
+
+  /* Brand Colors */
+
+  --primary: #0057D9;
+  --primary-dark: #0044B3;
+  --secondary: #071A2F;
+  --accent: #00B8A9;
+
+  /* Background */
+
+  --background: #F7FAFC;
+  --surface: #FFFFFF;
+
+  /* Text */
+
+  --heading: #0F172A;
+  --text: #475569;
+  --text-light: #64748B;
+
+  /* Border */
+
+  --border: #E2E8F0;
+
+  /* Radius */
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+
+  --shadow-sm: 0 5px 20px rgba(0,0,0,.05);
+
+  --shadow-md: 0 15px 40px rgba(0,0,0,.08);
+
+  --shadow-lg: 0 25px 70px rgba(0,0,0,.12);
+
+  /* Transition */
+
+  --transition: all .35s ease;
+
+}
+
+/*==========================================================
+  RESET
+==========================================================*/
+
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after{
 
-html {
-
-  scroll-behavior: smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
-body {
+html{
 
-  margin: 0;
-
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-
-  background: var(--background);
-
-  color: var(--text-primary);
+    scroll-behavior:smooth;
 
 }
 
-img {
+body{
 
-  max-width: 100%;
+    font-family:'Inter',sans-serif;
 
-  display: block;
+    background:var(--background);
 
-}
+    color:var(--text);
 
-a {
+    overflow-x:hidden;
 
-  color: inherit;
-
-  text-decoration: none;
+    line-height:1.7;
 
 }
 
-.container {
+/*==========================================================
+  TYPOGRAPHY
+==========================================================*/
 
-  @include mixins.container;
+h1,h2,h3,h4,h5,h6{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--heading);
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:0;
+
+}
+
+p{
+
+    margin-bottom:0;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/*==========================================================
+  CONTAINER
+==========================================================*/
+
+.container{
+
+    max-width:1320px;
+
+}
+
+/*==========================================================
+  SECTION
+==========================================================*/
+
+section{
+
+    position:relative;
+
+    padding:120px 0;
+
+}
+
+@media(max-width:991px){
+
+section{
+
+    padding:90px 0;
+
+}
+
+}
+
+@media(max-width:767px){
+
+section{
+
+    padding:70px 0;
+
+}
+
+}
+
+/*==========================================================
+  SECTION TITLE
+==========================================================*/
+
+.section-subtitle{
+
+    color:var(--primary);
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+}
+
+.section-title{
+
+    font-size:clamp(2rem,5vw,3.3rem);
+
+    margin-bottom:18px;
+
+}
+
+.section-description{
+
+    max-width:700px;
+
+    color:var(--text-light);
+
+}
+
+/*==========================================================
+  BUTTONS
+==========================================================*/
+
+.btn-custom{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:999px;
+
+    padding:15px 34px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary-custom{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #3B82F6
+    );
+
+    color:white;
+
+    box-shadow:0 12px 30px rgba(0,87,217,.25);
+
+}
+
+.btn-primary-custom:hover{
+
+    transform:translateY(-4px);
+
+    color:white;
+
+    box-shadow:0 18px 40px rgba(0,87,217,.35);
+
+}
+
+.btn-outline-custom{
+
+    border:2px solid white;
+
+    color:white;
+
+    background:transparent;
+
+}
+
+.btn-outline-custom:hover{
+
+    background:white;
+
+    color:var(--secondary);
+
+}
+
+/*==========================================================
+  CARD
+==========================================================*/
+
+.card-ui{
+
+    background:var(--surface);
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/*==========================================================
+  FORM
+==========================================================*/
+
+.form-control,
+.form-select{
+
+    min-height:56px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    box-shadow:none;
+
+    padding-inline:18px;
+
+}
+
+textarea.form-control{
+
+    min-height:160px;
+
+    resize:none;
+
+    padding-top:15px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .25rem rgba(0,87,217,.12);
+
+}
+
+/*==========================================================
+  UTILITIES
+==========================================================*/
+
+.text-gradient{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #3B82F6
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.shadow-custom{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.radius-lg{
+
+    border-radius:24px;
+
+}
+
+.radius-xl{
+
+    border-radius:32px;
+
+}
+
+/*==========================================================
+  ANIMATIONS
+==========================================================*/
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.float{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes floating{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/*==========================================================
+  SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#EDF2F7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:50px;
+
+}
+
+/*==========================================================
+  SELECTION
+==========================================================*/
+
+::selection{
+
+background:var(--primary);
+
+color:white;
 
 }

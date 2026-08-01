@@ -1,53 +1,39 @@
-import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-home-cta',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './home-cta.html',
   styleUrl: './home-cta.scss',
 })
 export class HomeCta {
 
-  private fb = inject(FormBuilder);
+  model = {
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    country: '',
+    service: '',
+    message: ''
+  };
 
-  contactForm = this.fb.group({
+  services = [
+    'Steel Detailing',
+    'Connection Detailing',
+    'BIM Modelling',
+    'Shop Drawings',
+    'Erection Drawings'
+  ];
 
-    fullName: ['', Validators.required],
+  submit(): void {
 
-    company: ['', Validators.required],
+    console.log(this.model);
 
-    email: ['', [Validators.required, Validators.email]],
-
-    phone: [''],
-
-    country: [''],
-
-    service: ['', Validators.required],
-
-    message: ['', Validators.required]
-
-  });
-
-  onSubmit() {
-
-    if (this.contactForm.invalid) {
-
-      this.contactForm.markAllAsTouched();
-
-      return;
-
-    }
-
-    console.log(this.contactForm.value);
-
-    // API Call here
+    alert('Demo Submitted Successfully');
 
   }
 

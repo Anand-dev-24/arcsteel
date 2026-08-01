@@ -1,21 +1,26 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
 
 interface Service {
+
+  id: number;
+
   title: string;
-  description: string;
+
+  shortTitle: string;
+
   image: string;
-  features: string[];
+
+  description: string;
+
+  points: string[];
+
 }
 
 @Component({
   selector: 'app-home-services-preview',
   standalone: true,
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   templateUrl: './home-services-preview.html',
   styleUrl: './home-services-preview.scss'
 })
@@ -23,63 +28,149 @@ export class HomeServicesPreview {
 
   selectedService = 0;
 
-  services: Service[] = [
+  readonly services: Service[] = [
 
     {
+
+      id: 0,
+
+      shortTitle: 'Steel Detailing',
+
       title: 'Structural Steel Detailing',
-      image: 'assets/images/services/service1.jpg',
-      description: 'Accurate shop drawings, GA drawings and fabrication detailing for commercial and industrial steel structures.',
-      features: [
-        'Shop Drawings',
-        'GA Drawings',
-        'Erection Drawings'
+
+      image: 'images/services/service_1.jpg',
+
+      description:
+      'We provide highly accurate structural steel detailing services using Tekla Structures and industry standards to produce fabrication-ready drawings.',
+
+      points: [
+
+        'Fabrication Drawings',
+
+        'Anchor Bolt Plans',
+
+        'General Arrangement Drawings',
+
+        'Assembly Drawings'
+
       ]
+
     },
 
     {
-      title: 'Tekla BIM Modeling',
-      image: 'assets/images/services/service2.jpg',
-      description: 'Detailed BIM models using Tekla Structures for coordination and fabrication.',
-      features: [
-        'LOD 400 Models',
+
+      id: 1,
+
+      shortTitle: 'Connection',
+
+      title: 'Steel Connection Detailing',
+
+      image: 'images/services/service_2.jpg',
+
+      description:
+      'Detailed connection drawings ensuring safe fabrication and erection while reducing rework at site.',
+
+      points: [
+
+        'Moment Connections',
+
+        'Shear Connections',
+
+        'Base Plate Details',
+
+        'Connection Calculations'
+
+      ]
+
+    },
+
+    {
+
+      id: 2,
+
+      shortTitle: 'BIM',
+
+      title: 'BIM & 3D Modelling',
+
+      image: 'images/services/service_3.jpg',
+
+      description:
+      'Accurate BIM models for clash detection, coordination and improved construction workflow.',
+
+      points: [
+
+        'LOD 300-500',
+
         'Clash Detection',
-        'BIM Coordination'
+
+        'Coordination Models',
+
+        'IFC Deliverables'
+
       ]
+
     },
 
     {
-      title: 'Connection Design',
-      image: 'assets/images/services/service3.jpg',
-      description: 'Economical and code-compliant connection design prepared by experienced engineers.',
-      features: [
-        'Connection Calculations',
-        'Design Reports',
-        'Fabrication Support'
-      ]
-    },
 
-    {
-      title: 'Fabrication Drawings',
-      image: 'assets/images/services/service4.jpg',
-      description: 'High-quality fabrication drawings prepared for seamless manufacturing.',
-      features: [
+      id: 3,
+
+      shortTitle: 'Shop Drawings',
+
+      title: 'Shop Drawings',
+
+      image: 'images/services/service_4.jpg',
+
+      description:
+      'Detailed shop drawings prepared for steel fabricators with complete dimensions and welding information.',
+
+      points: [
+
         'Assembly Drawings',
+
         'Single Part Drawings',
-        'NC Files'
+
+        'Bolt Lists',
+
+        'Material Lists'
+
       ]
+
     },
 
     {
-      title: 'Project Coordination',
-      image: 'assets/images/services/service5.jpg',
-      description: 'End-to-end coordination with architects, engineers and contractors.',
-      features: [
-        'RFI Management',
-        'Model Review',
-        'Project Support'
+
+      id: 4,
+
+      shortTitle: 'Erection',
+
+      title: 'Erection Drawings',
+
+      image: 'images/services/service_5.jpg',
+
+      description:
+      'Professional erection drawings for safe and efficient on-site installation of structural steel.',
+
+      points: [
+
+        'Sequence Drawings',
+
+        'GA Plans',
+
+        'Erection Marks',
+
+        'Field Bolt Details'
+
       ]
+
     }
 
   ];
+
+  select(index: number): void {
+
+    this.selectedService = index;
+
+  }
 
 }

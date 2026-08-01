@@ -1,14 +1,20 @@
-<section id="contact" class="contact-section">
+<section
+    class="contact-section"
+    id="contact">
 
     <div class="container">
 
+        <!-- ===========================
+             Section Heading
+        ============================ -->
+
         <div class="text-center mb-5">
 
-            <h6 class="section-subtitle">
+            <span class="section-tag">
 
                 CONTACT US
 
-            </h6>
+            </span>
 
             <h2 class="section-title">
 
@@ -16,18 +22,21 @@
 
             </h2>
 
-            <p>
+            <p class="section-description">
 
-                Tell us about your structural steel detailing requirements,
-                and our engineering team will get back to you.
+                Whether you need Structural Steel Detailing, BIM Modelling,
+                Shop Drawings or Connection Detailing, our engineering team
+                is ready to support your project.
 
             </p>
 
         </div>
 
-        <div class="row g-5">
+        <div class="row g-5 align-items-stretch">
 
-            <!-- Left Side -->
+            <!-- ==========================================
+                 LEFT SIDE
+            =========================================== -->
 
             <div class="col-lg-5">
 
@@ -41,51 +50,119 @@
 
                     <p>
 
-                        We provide structural steel detailing, BIM modeling,
-                        connection design, and fabrication drawings for
-                        clients worldwide.
+                        We'd love to understand your project requirements.
+                        Share your project details and our engineering team
+                        will get back to you as soon as possible.
 
                     </p>
 
-                    <div class="info-box">
+                    <!-- Phone -->
 
-                        <i class="bi bi-geo-alt-fill"></i>
+                    <div class="info-card">
+
+                        <div class="icon">
+
+                            <i class="bi bi-telephone-fill"></i>
+
+                        </div>
 
                         <div>
 
-                            <h5>Office</h5>
+                            <small>Phone</small>
 
-                            <span>Chennai, Tamil Nadu, India</span>
+                            <h6>+91 98765 43210</h6>
 
                         </div>
 
                     </div>
 
-                    <div class="info-box">
+                    <!-- Email -->
 
-                        <i class="bi bi-envelope-fill"></i>
+                    <div class="info-card">
+
+                        <div class="icon">
+
+                            <i class="bi bi-envelope-fill"></i>
+
+                        </div>
 
                         <div>
 
-                            <h5>Email</h5>
+                            <small>Email</small>
 
-                            <span>info@yourcompany.com</span>
+                            <h6>info@arcsteel.com</h6>
 
                         </div>
 
                     </div>
 
-                    <div class="info-box">
+                    <!-- Office -->
 
-                        <i class="bi bi-telephone-fill"></i>
+                    <div class="info-card">
+
+                        <div class="icon">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                        </div>
 
                         <div>
 
-                            <h5>Phone</h5>
+                            <small>Office</small>
 
-                            <span>+91 98765 43210</span>
+                            <h6>Chennai, Tamil Nadu, India</h6>
 
                         </div>
+
+                    </div>
+
+                    <!-- Hours -->
+
+                    <div class="info-card">
+
+                        <div class="icon">
+
+                            <i class="bi bi-clock-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>Working Hours</small>
+
+                            <h6>Mon - Sat | 9:00 AM - 6:00 PM</h6>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Social -->
+
+                    <div class="social-links">
+
+                        <a href="#">
+
+                            <i class="bi bi-linkedin"></i>
+
+                        </a>
+
+                        <a href="#">
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+                        <a href="#">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                        <a href="#">
+
+                            <i class="bi bi-twitter-x"></i>
+
+                        </a>
 
                     </div>
 
@@ -93,121 +170,171 @@
 
             </div>
 
-            <!-- Right Side -->
+            <!-- ==========================================
+                 FORM
+            =========================================== -->
 
             <div class="col-lg-7">
 
-                <form
-                    [formGroup]="contactForm"
-                    (ngSubmit)="onSubmit()">
+                <div class="contact-form">
 
-                    <div class="row">
+                    <form
+                        #contactForm="ngForm"
+                        (ngSubmit)="submit()">
 
-                        <div class="col-md-6 mb-4">
+                        <div class="row g-4">
 
-                            <input
-                                class="form-control"
-                                placeholder="Full Name"
-                                formControlName="fullName">
+                            <div class="col-md-6">
+
+                                <input
+
+                                    class="form-control"
+
+                                    type="text"
+
+                                    name="name"
+
+                                    [(ngModel)]="model.name"
+
+                                    placeholder="Full Name"
+
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input
+
+                                    class="form-control"
+
+                                    type="text"
+
+                                    name="company"
+
+                                    [(ngModel)]="model.company"
+
+                                    placeholder="Company Name">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input
+
+                                    class="form-control"
+
+                                    type="email"
+
+                                    name="email"
+
+                                    [(ngModel)]="model.email"
+
+                                    placeholder="Email Address"
+
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input
+
+                                    class="form-control"
+
+                                    type="text"
+
+                                    name="phone"
+
+                                    [(ngModel)]="model.phone"
+
+                                    placeholder="Phone Number">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input
+
+                                    class="form-control"
+
+                                    type="text"
+
+                                    name="country"
+
+                                    [(ngModel)]="model.country"
+
+                                    placeholder="Country">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <select
+
+                                    class="form-select"
+
+                                    name="service"
+
+                                    [(ngModel)]="model.service">
+
+                                    <option value="">
+
+                                        Select Service
+
+                                    </option>
+
+                                    @for(service of services; track service){
+
+                                        <option [value]="service">
+
+                                            {{ service }}
+
+                                        </option>
+
+                                    }
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <textarea
+
+                                    class="form-control"
+
+                                    rows="6"
+
+                                    name="message"
+
+                                    [(ngModel)]="model.message"
+
+                                    placeholder="Tell us about your project...">
+
+                                </textarea>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <button
+                                    class="submit-btn"
+                                    type="submit">
+
+                                    Request Proposal
+
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </button>
+
+                            </div>
 
                         </div>
 
-                        <div class="col-md-6 mb-4">
+                    </form>
 
-                            <input
-                                class="form-control"
-                                placeholder="Company Name"
-                                formControlName="company">
-
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-
-                            <input
-                                type="email"
-                                class="form-control"
-                                placeholder="Email Address"
-                                formControlName="email">
-
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-
-                            <input
-                                class="form-control"
-                                placeholder="Phone Number"
-                                formControlName="phone">
-
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-
-                            <input
-                                class="form-control"
-                                placeholder="Country"
-                                formControlName="country">
-
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-
-                            <select
-                                class="form-select"
-                                formControlName="service">
-
-                                <option value="">
-                                    Select Service
-                                </option>
-
-                                <option>
-                                    Structural Steel Detailing
-                                </option>
-
-                                <option>
-                                    Tekla BIM Modeling
-                                </option>
-
-                                <option>
-                                    Connection Design
-                                </option>
-
-                                <option>
-                                    Fabrication Drawings
-                                </option>
-
-                                <option>
-                                    Project Coordination
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="col-12 mb-4">
-
-                            <textarea
-                                rows="6"
-                                class="form-control"
-                                placeholder="Tell us about your project..."
-                                formControlName="message"></textarea>
-
-                        </div>
-
-                        <div class="col-12">
-
-                            <button
-                                class="btn btn-primary px-5 py-3"
-                                type="submit">
-
-                                Send Inquiry
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </form>
+                </div>
 
             </div>
 

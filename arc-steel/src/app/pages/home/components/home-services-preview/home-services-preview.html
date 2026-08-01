@@ -1,86 +1,138 @@
-<section class="services-section" id="services">
+<section
+    class="services-section section-padding"
+    id="services">
 
     <div class="container">
 
+        <!-- ===========================
+             SECTION TITLE
+        ============================ -->
+
         <div class="text-center mb-5">
 
-            <h6 class="section-subtitle">
+            <span class="section-tag">
+
                 OUR SERVICES
-            </h6>
+
+            </span>
 
             <h2 class="section-title">
-                Comprehensive Steel Detailing Solutions
+
+                Comprehensive Structural Steel Detailing Services
+
             </h2>
+
+            <p class="section-description">
+
+                We deliver accurate, fabrication-ready structural steel detailing
+                solutions that improve productivity, reduce errors and accelerate
+                project completion.
+
+            </p>
 
         </div>
 
-        <!-- Service Buttons -->
+        <!-- ===========================
+             SERVICE BUTTONS
+        ============================ -->
 
         <div class="service-tabs">
 
-            @for(service of services; track $index; let i = $index){
+            @for(service of services; track service.id; let i = $index){
 
-            <button
-                class="service-btn"
-                [class.active]="selectedService === i"
-                (click)="selectedService = i">
+                <button
 
-                {{service.title}}
+                    class="service-tab"
 
-            </button>
+                    [class.active]="selectedService === i"
+
+                    (click)="select(i)">
+
+                    {{ service.shortTitle }}
+
+                </button>
 
             }
 
         </div>
 
-        <!-- Selected Service -->
+        <!-- ===========================
+             CONTENT
+        ============================ -->
 
-        <div class="row align-items-center mt-5">
+        <div class="service-content">
 
-            <div class="col-lg-6">
+            <div class="row align-items-center g-5">
 
-                <h3>
+                <!-- Left -->
 
-                    {{services[selectedService].title}}
+                <div class="col-lg-6">
 
-                </h3>
+                    <div class="service-text">
 
-                <p>
+                        <span class="service-number">
 
-                    {{services[selectedService].description}}
+                            0{{ selectedService + 1 }}
 
-                </p>
+                        </span>
 
-                <ul>
+                        <h3>
 
-                    @for(feature of services[selectedService].features; track $index){
+                            {{ services[selectedService].title }}
 
-                    <li>
+                        </h3>
 
-                        <i class="bi bi-check-circle-fill"></i>
+                        <p>
 
-                        {{feature}}
+                            {{ services[selectedService].description }}
 
-                    </li>
+                        </p>
 
-                    }
+                        <ul>
 
-                </ul>
+                            @for(point of services[selectedService].points; track point){
 
-                <button class="btn btn-primary mt-3">
+                                <li>
 
-                    Learn More
+                                    <i class="bi bi-check-circle-fill"></i>
 
-                </button>
+                                    {{ point }}
 
-            </div>
+                                </li>
 
-            <div class="col-lg-6">
+                            }
 
-                <img
-                    [src]="services[selectedService].image"
-                    class="img-fluid rounded shadow"
-                    [alt]="services[selectedService].title">
+                        </ul>
+
+                        <button class="primary-btn">
+
+                            Learn More
+
+                            <i class="bi bi-arrow-right ms-2"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-lg-6">
+
+                    <div class="service-image">
+
+                        <img
+
+                            [src]="services[selectedService].image"
+
+                            [alt]="services[selectedService].title"
+
+                            class="img-fluid rounded-4">
+
+                    </div>
+
+                </div>
 
             </div>
 

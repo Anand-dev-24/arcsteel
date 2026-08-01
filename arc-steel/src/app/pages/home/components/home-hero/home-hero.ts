@@ -2,94 +2,125 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  signal
+  inject,
+  PLATFORM_ID
 } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
+import {
+  CommonModule,
+  isPlatformBrowser
+} from '@angular/common';
+
+interface HeroSlide {
+  image: string;
+  subtitle: string;
+  title: string;
+  description: string;
+  buttonText: string;
+}
 
 @Component({
   selector: 'app-home-hero',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatButtonModule
-  ],
+  imports: [CommonModule],
   templateUrl: './home-hero.html',
   styleUrl: './home-hero.scss'
 })
 export class HomeHero implements OnInit, OnDestroy {
 
-  currentSlide = 0;
+  private readonly platformId = inject(PLATFORM_ID);
 
-  intervalId: any;
+  private timer: number | null = null;
 
-  heroSlides = [
+  currentIndex = 0;
+
+  readonly slides: HeroSlide[] = [
 
     {
       image: 'images/hero/hero_1.jpg',
-      title: 'Structural Steel Detailing',
-      subtitle: 'Accurate. Reliable. Delivered On Time.'
+      subtitle: 'STRUCTURAL STEEL DETAILING',
+      title: 'Precision Steel Detailing Solutions',
+      description:
+        'Accurate shop drawings, erection drawings and BIM models delivered on time for fabricators and contractors worldwide.',
+      buttonText: 'Learn More'
     },
 
     {
       image: 'images/hero/hero_2.jpg',
-      title: 'Tekla BIM Modeling',
-      subtitle: 'High Precision 3D Models'
+      subtitle: 'BIM MODELLING',
+      title: 'Intelligent 3D Steel Modelling',
+      description:
+        'High-quality BIM models that improve coordination, reduce clashes and accelerate project delivery.',
+      buttonText: 'Our Services'
     },
 
     {
       image: 'images/hero/hero_3.jpg',
-      title: 'Connection Design',
-      subtitle: 'Safe and Cost Effective Solutions'
+      subtitle: 'SHOP DRAWINGS',
+      title: 'Fabrication Ready Drawings',
+      description:
+        'Detailed fabrication drawings prepared according to AISC, NISD and international standards.',
+      buttonText: 'View Projects'
     },
 
     {
       image: 'images/hero/hero_4.jpg',
-      title: 'Fabrication Drawings',
-      subtitle: 'Shop Drawings Ready For Production'
+      subtitle: 'GLOBAL DELIVERY',
+      title: 'Trusted Engineering Partner',
+      description:
+        'Supporting structural steel fabricators, consultants and contractors across the globe.',
+      buttonText: 'About Us'
     },
 
     {
-      image: 'images/hero/hero_2.jpg',
-      title: 'Global Engineering Services',
-      subtitle: 'Supporting Projects Worldwide'
+      image: 'images/hero/hero_5.jpg',
+      subtitle: 'QUALITY FIRST',
+      title: 'Engineering Excellence Delivered',
+      description:
+        'Committed to quality, accuracy and timely delivery for every structural steel project.',
+      buttonText: 'Contact Us'
     }
 
   ];
 
-  ngOnInit() {
-    this.startSlider();
-  }
+  ngOnInit(): void {
 
-  ngOnDestroy() {
-    clearInterval(this.intervalId);
-  }
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
 
-  startSlider() {
-
-    this.intervalId = setInterval(() => {
-
-      this.nextSlide();
-
+    this.timer = window.setInterval(() => {
+      this.next();
     }, 5000);
 
   }
 
-  nextSlide() {
+  ngOnDestroy(): void {
 
-    this.currentSlide =
-      (this.currentSlide + 1) % this.heroSlides.length;
+    if (this.timer !== null) {
+      clearInterval(this.timer);
+    }
 
   }
 
-  previousSlide() {
+  next(): void {
 
-    this.currentSlide =
-      (this.currentSlide - 1 + this.heroSlides.length)
-      % this.heroSlides.length;
+    this.currentIndex =
+      (this.currentIndex + 1) % this.slides.length;
+
+  }
+
+  previous(): void {
+
+    this.currentIndex =
+      (this.currentIndex - 1 + this.slides.length) %
+      this.slides.length;
+
+  }
+
+  goTo(index: number): void {
+
+    this.currentIndex = index;
 
   }
 

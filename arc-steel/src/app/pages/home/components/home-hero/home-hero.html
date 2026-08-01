@@ -1,79 +1,109 @@
-<!-- ===========================================
- HERO SECTION
-============================================ -->
+<section class="hero-section" id="home">
 
-<section id="home" class="hero">
+    <!-- Background Images -->
 
-    <div class="hero-slider">
+    @for (slide of slides; track slide.image; let i = $index) {
 
         <div
-            *ngFor="let slide of heroSlides; let i=index"
             class="hero-slide"
-            [class.active]="currentSlide==i"
-            [style.backgroundImage]="'url(' + slide.image + ')'">
+            [class.active]="i === currentIndex"
+            [style.background-image]="'url(' + slide.image + ')'">
 
-            <div class="overlay"></div>
+            <div class="hero-overlay"></div>
 
-            <div class="container">
+        </div>
 
-                <div class="hero-content">
+    }
 
-                    <h1>
+    <!-- Hero Content -->
 
-                        {{slide.title}}
+    <div class="container">
 
-                    </h1>
+        <div class="hero-content">
 
-                    <p>
+            <span class="hero-subtitle">
 
-                        {{slide.subtitle}}
+                {{ slides[currentIndex].subtitle }}
 
-                    </p>
+            </span>
 
-                    <button class="btn btn-primary btn-lg">
+            <h1>
 
-                        Learn More
+                {{ slides[currentIndex].title }}
 
-                    </button>
+            </h1>
 
-                </div>
+            <p>
+
+                {{ slides[currentIndex].description }}
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+
+                    {{ slides[currentIndex].buttonText }}
+
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="document.getElementById('services')?.scrollIntoView({behavior:'smooth'})">
+
+                    Our Services
+
+                </button>
 
             </div>
 
         </div>
 
-        <!-- Previous -->
+    </div>
 
-        <button
-            class="slider-btn prev"
-            (click)="previousSlide()">
+    <!-- Previous -->
 
-            <i class="bi bi-chevron-left"></i>
+    <button
+        class="hero-arrow left"
+        (click)="previous()">
 
-        </button>
+        <i class="bi bi-chevron-left"></i>
 
-        <!-- Next -->
+    </button>
 
-        <button
-            class="slider-btn next"
-            (click)="nextSlide()">
+    <!-- Next -->
 
-            <i class="bi bi-chevron-right"></i>
+    <button
+        class="hero-arrow right"
+        (click)="next()">
 
-        </button>
+        <i class="bi bi-chevron-right"></i>
 
-        <!-- Dots -->
+    </button>
 
-        <div class="slider-dots">
+    <!-- Indicators -->
 
-            <span
-                *ngFor="let slide of heroSlides; let i=index"
-                [class.active]="currentSlide==i"
-                (click)="currentSlide=i">
+    <div class="hero-indicators">
 
-            </span>
+        @for (slide of slides; track slide.image; let i = $index) {
 
-        </div>
+            <button
+                class="dot"
+                [class.active]="i === currentIndex"
+                (click)="goTo(i)">
+            </button>
+
+        }
+
+    </div>
+
+    <!-- Scroll Indicator -->
+
+    <div class="scroll-down">
+
+        <span></span>
+
+        <small>SCROLL</small>
 
     </div>
 
