@@ -1,6 +1,6 @@
 .footer {
 
-    background: #071a2f;
+    background: var(--secondary);
 
     color: #cbd5e1;
 
@@ -182,4 +182,8 @@ hr {
 
     }
 
+}
+
+.cursor {
+    cursor: pointer;
 }

@@ -24,7 +24,7 @@
 
 .header.scrolled {
 
-    background: rgba(7, 26, 47, .92);
+    background: var(--secondary);
 
     backdrop-filter: blur(18px);
 
@@ -199,7 +199,7 @@
     background:linear-gradient(
         135deg,
         var(--primary),
-        #3b82f6
+        var(--primary-dark)
     );
 
     color:#fff;

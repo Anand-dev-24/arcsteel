@@ -62,18 +62,32 @@
  OVERLAY
 ==============================================================*/
 
+// .hero-overlay {
+
+//     position: absolute;
+//     inset: 0;
+
+//     background:
+//         linear-gradient(
+//             90deg,
+//             rgba(24,24,27,.92) 0%,
+//             rgba(38,34,30,.78) 45%,
+//             rgba(24,24,27,.48) 100%
+//         );
+
+// }
+
 .hero-overlay {
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(5,18,35,.92),
-            rgba(5,18,35,.72),
-            rgba(5,18,35,.45)
+            rgba(24, 24, 27, .88) 0%,
+            rgba(24, 24, 27, .72) 45%,
+            rgba(24, 24, 27, .45) 100%
         );
 
 }

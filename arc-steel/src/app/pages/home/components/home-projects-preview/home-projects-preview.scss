@@ -6,7 +6,7 @@
 
     padding: 100px 0;
 
-    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #F7F7F7 100%);
 
 }
 
@@ -22,7 +22,7 @@
 
     border-radius: 50px;
 
-    background: rgba(0, 87, 217, .08);
+    background: rgba(245,124,0,.08);
 
     color: var(--primary);
 
@@ -114,8 +114,7 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #2563eb
+        var(--primary), var(--primary-dark)
     );
 
     box-shadow: 0 18px 35px rgba(0,87,217,.28);
@@ -280,8 +279,7 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #2563eb
+        var(--primary), var(--primary-dark)
     );
 
     color: white;

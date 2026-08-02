@@ -6,7 +6,7 @@
 
     padding: 100px 0;
 
-    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #F7F7F7 0%, #ffffff 100%);
 
 }
 
@@ -22,7 +22,7 @@
 
     border-radius: 50px;
 
-    background: rgba(0,87,217,.08);
+    background: rgba(245,124,0,.08);
 
     color: var(--primary);
 
@@ -68,7 +68,7 @@
 
     height: 100%;
 
-    background: linear-gradient(135deg,#0b1f3a,#144d9d);
+    background: linear-gradient(135deg,var(--secondary),var(--secondary-light));
 
     color: white;
 
@@ -286,8 +286,7 @@ textarea.form-control {
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #2563eb
+        var(--primary), var(--primary-dark)
     );
 
     color: white;

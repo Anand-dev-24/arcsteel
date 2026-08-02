@@ -6,7 +6,7 @@
 
     padding: 100px 0;
 
-    background: #f8fafc;
+    background: #F7F7F7;
 
     position: relative;
 
@@ -26,7 +26,7 @@
 
     border-radius: 50px;
 
-    background: rgba(0, 87, 217, .08);
+    background: rgba(245,124,0,.08);
 
     color: var(--primary);
 
@@ -118,8 +118,7 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #2563eb
+        var(--primary), var(--primary-dark)
     );
 
     color: white;
@@ -238,8 +237,7 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        #2563eb
+        var(--primary), var(--primary-dark)
     );
 
     color: white;
