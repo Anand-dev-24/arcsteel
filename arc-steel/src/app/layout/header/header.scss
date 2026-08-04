@@ -12,19 +12,19 @@
 
     width: 100%;
 
-    z-index: 1000;
+    z-index: 997;
 
     transition: .35s ease;
 
     padding: 18px 0;
 
-    background: transparent;
+    background: #FFFFFF;
 
 }
 
 .header.scrolled {
 
-    background: var(--secondary);
+    background: #FFFFFF;
 
     backdrop-filter: blur(18px);
 
@@ -112,7 +112,7 @@
 
     background:none;
 
-    color:#fff;
+    color:black;
 
     font-weight:600;
 
@@ -154,7 +154,7 @@
 
 .desktop-menu button:hover{
 
-    color:#fff;
+    color:blaCK;
 
 }
 
@@ -254,7 +254,7 @@
 
     height:2px;
 
-    background:#fff;
+    background:black;
 
 }
 
@@ -350,7 +350,7 @@
 
     align-items:center;
 
-    padding:24px;
+    padding:12px;
 
     border-bottom:1px solid #eee;
 
