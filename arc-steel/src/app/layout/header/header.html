@@ -8,12 +8,10 @@
                  Logo
             =========================== -->
 
-            <a class="logo" (click)="scrollTo('home')">
+            <a class="newLogo" (click)="scrollTo('home')">
 
                 <!-- Replace with your logo -->
-                <img
-                    src="images/logo.jpeg"
-                    alt="ARC Steel">
+                <!-- <img src="images/logo.jpeg" alt="ARC Steel"> -->
 
                 <!--
                 OR
@@ -34,17 +32,15 @@
 
                 @for(menu of menus; track menu.target){
 
-                    <li>
+                <li>
 
-                        <button
-                            type="button"
-                            (click)="scrollTo(menu.target)">
+                    <button type="button" (click)="scrollTo(menu.target)">
 
-                            {{menu.label}}
+                        {{menu.label}}
 
-                        </button>
+                    </button>
 
-                    </li>
+                </li>
 
                 }
 
@@ -58,9 +54,7 @@
 
             <div class="right-section">
 
-                <button
-                    class="quote-btn"
-                    (click)="scrollTo('contact')">
+                <button class="quote-btn" (click)="scrollTo('contact')">
 
                     Get Quote
 
@@ -74,13 +68,7 @@
                      Hamburger
                 =========================== -->
 
-                <button
-
-                    class="hamburger"
-
-                    (click)="toggleMenu()"
-
-                    aria-label="Menu">
+                <button class="hamburger" (click)="toggleMenu()" aria-label="Menu">
 
                     <span></span>
 
@@ -104,13 +92,7 @@
      Mobile Overlay
 ========================================== -->
 
-<div
-
-class="mobile-overlay"
-
-[class.show]="isMenuOpen()"
-
-(click)="closeMenu()">
+<div class="mobile-overlay" [class.show]="isMenuOpen()" (click)="closeMenu()">
 
 </div>
 
@@ -120,27 +102,15 @@ class="mobile-overlay"
      Mobile Menu
 ========================================== -->
 
-<div
-
-class="mobile-menu"
-
-[class.open]="isMenuOpen()">
+<div class="mobile-menu" [class.open]="isMenuOpen()">
 
 
     <div class="mobile-header">
 
-        <img
-
-        src="images/logo.jpeg"
-
-        alt="Logo">
+        <img src="images/logo.jpeg" alt="Logo">
 
 
-        <button
-
-        class="close-btn"
-
-        (click)="closeMenu()">
+        <button class="close-btn" (click)="closeMenu()">
 
             <i class="bi bi-x-lg"></i>
 
@@ -154,13 +124,11 @@ class="mobile-menu"
 
         @for(menu of menus; track menu.target){
 
-            <button
+        <button (click)="scrollTo(menu.target)">
 
-            (click)="scrollTo(menu.target)">
+            {{menu.label}}
 
-                {{menu.label}}
-
-            </button>
+        </button>
 
         }
 
@@ -170,11 +138,7 @@ class="mobile-menu"
 
     <div class="mobile-bottom">
 
-        <button
-
-        class="quote-btn"
-
-        (click)="scrollTo('contact')">
+        <button class="quote-btn" (click)="scrollTo('contact')">
 
             Request Quote
 

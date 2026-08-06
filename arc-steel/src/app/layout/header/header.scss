@@ -32,7 +32,7 @@
 
     box-shadow: 0 10px 30px rgba(0,0,0,.18);
 
-    padding: 12px 0;
+    padding: 18px 0;
 
 }
 
@@ -54,6 +54,16 @@
    LOGO
 ========================================================== */
 
+.newLogo {
+    display: block;
+    width: 260px;
+    height: 70px;
+    background-image: url(/images/logo.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .logo{
 
     display:flex;
@@ -74,7 +84,7 @@
 
 }
 
-.header.scrolled .logo img{
+.header.scrolled .newLogo{
 
     height:48px;
 
