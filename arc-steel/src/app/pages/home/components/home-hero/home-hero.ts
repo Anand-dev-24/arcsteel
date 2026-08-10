@@ -10,14 +10,8 @@ import {
   CommonModule,
   isPlatformBrowser
 } from '@angular/common';
-
-interface HeroSlide {
-  image: string;
-  subtitle: string;
-  title: string;
-  description: string;
-  buttonText: string;
-}
+import { HeroSlides } from '../../../../core/models/hero.model';
+import { ContentService } from '../../../../shared/services/content.service';
 
 @Component({
   selector: 'app-home-hero',
@@ -34,56 +28,13 @@ export class HomeHero implements OnInit, OnDestroy {
 
   currentIndex = 0;
 
-  readonly slides: HeroSlide[] = [
+  heroSlides: HeroSlides[] = [];
 
-    {
-      image: 'images/hero/hero_1.jpg',
-      subtitle: 'STRUCTURAL STEEL DETAILING',
-      title: 'Precision Steel Detailing Solutions',
-      description:
-        'Accurate shop drawings, erection drawings and BIM models delivered on time for fabricators and contractors worldwide.',
-      buttonText: 'Learn More'
-    },
-
-    {
-      image: 'images/hero/hero_2.jpg',
-      subtitle: 'BIM MODELLING',
-      title: 'Intelligent 3D Steel Modelling',
-      description:
-        'High-quality BIM models that improve coordination, reduce clashes and accelerate project delivery.',
-      buttonText: 'Our Services'
-    },
-
-    {
-      image: 'images/hero/hero_3.jpg',
-      subtitle: 'SHOP DRAWINGS',
-      title: 'Fabrication Ready Drawings',
-      description:
-        'Detailed fabrication drawings prepared according to AISC, NISD and international standards.',
-      buttonText: 'View Projects'
-    },
-
-    {
-      image: 'images/hero/hero_4.jpg',
-      subtitle: 'GLOBAL DELIVERY',
-      title: 'Trusted Engineering Partner',
-      description:
-        'Supporting structural steel fabricators, consultants and contractors across the globe.',
-      buttonText: 'About Us'
-    },
-
-    {
-      image: 'images/hero/hero_5.jpg',
-      subtitle: 'QUALITY FIRST',
-      title: 'Engineering Excellence Delivered',
-      description:
-        'Committed to quality, accuracy and timely delivery for every structural steel project.',
-      buttonText: 'Contact Us'
-    }
-
-  ];
+  private content = inject(ContentService);
 
   ngOnInit(): void {
+
+    this.heroSlides = this.content.getHero().slides;
 
     if (!isPlatformBrowser(this.platformId)) {
       return;
@@ -106,15 +57,15 @@ export class HomeHero implements OnInit, OnDestroy {
   next(): void {
 
     this.currentIndex =
-      (this.currentIndex + 1) % this.slides.length;
+      (this.currentIndex + 1) % this.heroSlides.length;
 
   }
 
   previous(): void {
 
     this.currentIndex =
-      (this.currentIndex - 1 + this.slides.length) %
-      this.slides.length;
+      (this.currentIndex - 1 + this.heroSlides.length) %
+      this.heroSlides.length;
 
   }
 

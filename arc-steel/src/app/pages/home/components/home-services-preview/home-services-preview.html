@@ -12,21 +12,19 @@
 
             <span class="section-tag">
 
-                OUR SERVICES
+                {{data?.title}}
 
             </span>
 
             <h2 class="section-title">
 
-                Comprehensive Structural Steel Detailing Services
+                {{data?.heading}}
 
             </h2>
 
             <p class="section-description">
 
-                We deliver accurate, fabrication-ready structural steel detailing
-                solutions that improve productivity, reduce errors and accelerate
-                project completion.
+                {{data?.description}}
 
             </p>
 
@@ -78,19 +76,19 @@
 
                         <h3>
 
-                            {{ services[selectedService].title }}
+                            {{ services[selectedService]?.title }}
 
                         </h3>
 
                         <p>
 
-                            {{ services[selectedService].description }}
+                            {{ services[selectedService]?.description }}
 
                         </p>
 
                         <ul>
 
-                            @for(point of services[selectedService].points; track point){
+                            @for(point of services[selectedService]?.points; track point){
 
                                 <li>
 
@@ -104,13 +102,13 @@
 
                         </ul>
 
-                        <button class="primary-btn">
+                        <!-- <button class="primary-btn">
 
                             Learn More
 
                             <i class="bi bi-arrow-right ms-2"></i>
 
-                        </button>
+                        </button> -->
 
                     </div>
 
@@ -124,9 +122,9 @@
 
                         <img
 
-                            [src]="services[selectedService].image"
+                            [src]="services[selectedService]?.image"
 
-                            [alt]="services[selectedService].title"
+                            [alt]="services[selectedService]?.title"
 
                             class="img-fluid rounded-4">
 

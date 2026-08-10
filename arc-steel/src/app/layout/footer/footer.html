@@ -10,23 +10,20 @@
 
             <div class="col-lg-5 mt-0">
 
-                   <a class="newLogo" (click)="scrollTo('home')"></a>
+                   <a class="lg-logo" (click)="scrollTo('home')"></a>
 
                 <p class="footer-about">
 
-                    ARC Steel delivers high-quality Structural Steel Detailing,
-                    BIM Modelling, Shop Drawings and Connection Detailing
-                    services for fabricators, contractors and consultants
-                    worldwide.
+                    {{data?.description}}
 
                 </p>
 
                 <div class="social-links">
 
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a [href]="data?.linkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a [href]="data?.facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a [href]="data?.instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a [href]="data?.twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
 
                 </div>
 
@@ -74,7 +71,7 @@
 
                         <i class="bi bi-geo-alt-fill"></i>
 
-                        Chennai, Tamil Nadu, India
+                        {{contact?.location}}
 
                     </li>
 
@@ -82,7 +79,7 @@
 
                         <i class="bi bi-envelope-fill"></i>
 
-                        info@stellarcdetailing.com
+                        {{contact?.email}}
 
                     </li>
 
@@ -90,7 +87,7 @@
 
                         <i class="bi bi-telephone-fill"></i>
 
-                        +91 98765 43210
+                        {{contact.phone}}
 
                     </li>
 
@@ -98,7 +95,7 @@
 
                         <i class="bi bi-clock-fill"></i>
 
-                        Mon - Sat | 9 AM - 6 PM
+                        {{contact.workingHours}}
 
                     </li>
 

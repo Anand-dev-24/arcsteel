@@ -1,5 +1,7 @@
-import { Component, DOCUMENT, inject, PLATFORM_ID } from '@angular/core';
+import { Component, DOCUMENT, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ContentService } from '../../shared/services/content.service';
+import { FooterContact, FooterContent, FooterQuickLink } from '../../core/models/footer.model';
 
 @Component({
   selector: 'app-footer',
@@ -8,66 +10,49 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   templateUrl: './footer.html',
   styleUrl: './footer.scss'
 })
-export class Footer {
+export class Footer implements OnInit {
+
+  private content = inject(ContentService);
+
+  data!: FooterContent;
 
   readonly year = new Date().getFullYear();
 
-  
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
-  
-  readonly quickLinks = [
-    {
-      displayName: 'Home',
-      link: 'home'
-    }, {
-      displayName: 'About',
-      link: 'about'
-    }, {
-      displayName: 'Services',
-      link: 'services'
-    }, {
-      displayName: 'Projects',
-      link: 'projects'
-    }, {
-      displayName: 'Contact',
-      link: 'contact'
+  quickLinks: FooterQuickLink[] = [];
+  contact!: FooterContact;
+
+  ngOnInit(): void {
+    this.data = this.content.getFooter();
+    this.quickLinks = this.data?.quickLinks;
+    this.contact = this.data?.contact;
+  }
+
+  scrollTo(id: string): void {
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
     }
-  ];
 
-  readonly services = [
-    'Steel Detailing',
-    'Connection Detailing',
-    'BIM Modelling',
-    'Shop Drawings',
-    'Erection Drawings'
-  ];
+    const section = this.document.getElementById(id);
 
-
-    scrollTo(id: string): void {
-  
-      if (!isPlatformBrowser(this.platformId)) {
-        return;
-      }
-  
-      const section = this.document.getElementById(id);
-  
-      if (!section) {
-        return;
-      }
-  
-      const offset = 85;
-  
-      const top =
-        section.getBoundingClientRect().top +
-        window.scrollY -
-        offset;
-  
-      window.scrollTo({
-        top,
-        behavior: 'smooth'
-      });
-  
+    if (!section) {
+      return;
     }
+
+    const offset = 85;
+
+    const top =
+      section.getBoundingClientRect().top +
+      window.scrollY -
+      offset;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
+
+  }
 
 }

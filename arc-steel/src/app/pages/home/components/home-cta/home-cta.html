@@ -12,21 +12,19 @@
 
             <span class="section-tag">
 
-                CONTACT US
+                {{data?.title}}
 
             </span>
 
             <h2 class="section-title">
 
-                Let's Discuss Your Next Project
+                {{data?.heading}}
 
             </h2>
 
             <p class="section-description">
 
-                Whether you need Structural Steel Detailing, BIM Modelling,
-                Shop Drawings or Connection Detailing, our engineering team
-                is ready to support your project.
+                {{data?.description}}
 
             </p>
 
@@ -44,15 +42,13 @@
 
                     <h3>
 
-                        Get In Touch
+                        {{contactInfo?.title}}
 
                     </h3>
 
                     <p>
 
-                        We'd love to understand your project requirements.
-                        Share your project details and our engineering team
-                        will get back to you as soon as possible.
+                        {{contactInfo?.description}}
 
                     </p>
 
@@ -70,7 +66,7 @@
 
                             <small>Phone</small>
 
-                            <h6>+91 98765 43210</h6>
+                            <h6>{{contactInfo?.phone}}</h6>
 
                         </div>
 
@@ -90,7 +86,7 @@
 
                             <small>Email</small>
 
-                            <h6>info@stellarcdetailing.com</h6>
+                            <h6>{{contactInfo?.email}}</h6>
 
                         </div>
 
@@ -110,7 +106,7 @@
 
                             <small>Office</small>
 
-                            <h6>Chennai, Tamil Nadu, India</h6>
+                            <h6>{{contactInfo?.location}}</h6>
 
                         </div>
 
@@ -130,7 +126,7 @@
 
                             <small>Working Hours</small>
 
-                            <h6>Mon - Sat | 9:00 AM - 6:00 PM</h6>
+                            <h6>{{contactInfo?.workingHours}}</h6>
 
                         </div>
 
@@ -284,7 +280,7 @@
 
                                     </option>
 
-                                    @for(service of services; track service){
+                                    @for(service of servicesList; track service){
 
                                         <option [value]="service">
 

@@ -2,7 +2,7 @@
 
     <!-- Background Images -->
 
-    @for (slide of slides; track slide.image; let i = $index) {
+    @for (slide of heroSlides; track slide.title; let i = $index) {
 
         <div
             class="hero-slide"
@@ -23,19 +23,19 @@
 
             <span class="hero-subtitle">
 
-                {{ slides[currentIndex].subtitle }}
+                {{ heroSlides[currentIndex]?.subtitle }}
 
             </span>
 
             <h1>
 
-                {{ slides[currentIndex].title }}
+                {{ heroSlides[currentIndex]?.title }}
 
             </h1>
 
             <p>
 
-                {{ slides[currentIndex].description }}
+                {{ heroSlides[currentIndex]?.description }}
 
             </p>
 
@@ -43,7 +43,7 @@
 
                 <button class="primary-btn">
 
-                    {{ slides[currentIndex].buttonText }}
+                    {{ heroSlides[currentIndex]?.buttonText }}
 
                 </button>
 
@@ -85,7 +85,7 @@
 
     <div class="hero-indicators">
 
-        @for (slide of slides; track slide.image; let i = $index) {
+        @for (slide of heroSlides; track slide.image; let i = $index) {
 
             <button
                 class="dot"

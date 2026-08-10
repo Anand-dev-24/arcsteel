@@ -54,7 +54,7 @@
    LOGO
 ========================================================== */
 
-.newLogo {
+.lg-logo {
     display: block;
     width: 260px;
     height: 70px;
@@ -450,7 +450,7 @@
    RESPONSIVE
 ========================================================== */
 
-@media(max-width:991px){
+@media(max-width:1280px){
 
     .desktop-menu{
 
@@ -472,7 +472,7 @@
 
 }
 
-@media(min-width:992px){
+@media(min-width:1200px){
 
     .mobile-menu,
 

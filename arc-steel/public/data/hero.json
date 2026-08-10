@@ -1,0 +1,39 @@
+{
+  "slides": [
+    {
+      "image": "images/hero/hero_1.jpg",
+      "subtitle": "STRUCTURAL STEEL DETAILING",
+      "title": "Precision Steel Detailing Solutions",
+      "description": "Accurate shop drawings, erection drawings and BIM models delivered on time for fabricators and contractors worldwide.",
+      "buttonText": "Learn More"
+    },
+    {
+      "image": "images/hero/hero_2.jpg",
+      "subtitle": "BIM MODELLING",
+      "title": "Intelligent 3D Steel Modelling",
+      "description": "High-quality BIM models that improve coordination, reduce clashes and accelerate project delivery.",
+      "buttonText": "Our Services"
+    },
+    {
+      "image": "images/hero/hero_3.jpg",
+      "subtitle": "SHOP DRAWINGS",
+      "title": "Fabrication Ready Drawings",
+      "description": "Detailed fabrication drawings prepared according to AISC, NISD and international standards.",
+      "buttonText": "View Projects"
+    },
+    {
+      "image": "images/hero/hero_4.jpg",
+      "subtitle": "GLOBAL DELIVERY",
+      "title": "Trusted Engineering Partner",
+      "description": "Supporting structural steel fabricators, consultants and contractors across the globe.",
+      "buttonText": "About Us"
+    },
+    {
+      "image": "images/hero/hero_5.jpg",
+      "subtitle": "QUALITY FIRST",
+      "title": "Engineering Excellence Delivered",
+      "description": "Committed to quality, accuracy and timely delivery for every structural steel project.",
+      "buttonText": "Contact Us"
+    }
+  ]
+}
