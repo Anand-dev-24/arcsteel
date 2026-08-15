@@ -175,7 +175,7 @@
                 <div class="contact-form">
 
                     <form
-                        #contactForm="ngForm"
+                        #ctaForm="ngForm"
                         (ngSubmit)="submit()">
 
                         <div class="row g-4">
@@ -190,7 +190,7 @@
 
                                     name="name"
 
-                                    [(ngModel)]="model.name"
+                                    [(ngModel)]="contactForm.name"
 
                                     placeholder="Full Name"
 
@@ -208,7 +208,7 @@
 
                                     name="company"
 
-                                    [(ngModel)]="model.company"
+                                    [(ngModel)]="contactForm.company"
 
                                     placeholder="Company Name">
 
@@ -224,7 +224,7 @@
 
                                     name="email"
 
-                                    [(ngModel)]="model.email"
+                                    [(ngModel)]="contactForm.email"
 
                                     placeholder="Email Address"
 
@@ -242,7 +242,7 @@
 
                                     name="phone"
 
-                                    [(ngModel)]="model.phone"
+                                    [(ngModel)]="contactForm.phone"
 
                                     placeholder="Phone Number">
 
@@ -258,7 +258,7 @@
 
                                     name="country"
 
-                                    [(ngModel)]="model.country"
+                                    [(ngModel)]="contactForm.country"
 
                                     placeholder="Country">
 
@@ -272,7 +272,7 @@
 
                                     name="service"
 
-                                    [(ngModel)]="model.service">
+                                    [(ngModel)]="contactForm.service">
 
                                     <option value="">
 
@@ -304,7 +304,7 @@
 
                                     name="message"
 
-                                    [(ngModel)]="model.message"
+                                    [(ngModel)]="contactForm.message"
 
                                     placeholder="Tell us about your project...">
 

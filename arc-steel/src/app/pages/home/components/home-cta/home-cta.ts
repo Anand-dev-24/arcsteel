@@ -20,7 +20,7 @@ export class HomeCta implements OnInit {
 
   contactInfo!: ContactInfo;
 
-  model = {
+  contactForm = {
     name: '',
     company: '',
     email: '',
@@ -36,13 +36,14 @@ export class HomeCta implements OnInit {
 
   ngOnInit(): void {
     this.data = this.content.getContact();
+    this.contactInfo = this.data?.contactInfo;
     this.service = this.content.getService();
     this.servicesList = this.service?.services?.map(e => e.shortTitle);
   }
 
   submit(): void {
 
-    console.log(this.model);
+    console.log(this.contactForm);
 
     alert('Demo Submitted Successfully');
 

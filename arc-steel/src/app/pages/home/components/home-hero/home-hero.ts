@@ -2,8 +2,7 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  inject,
-  PLATFORM_ID
+  inject
 } from '@angular/core';
 
 import {
@@ -22,8 +21,6 @@ import { ContentService } from '../../../../shared/services/content.service';
 })
 export class HomeHero implements OnInit, OnDestroy {
 
-  private readonly platformId = inject(PLATFORM_ID);
-
   private timer: number | null = null;
 
   currentIndex = 0;
@@ -35,10 +32,6 @@ export class HomeHero implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.heroSlides = this.content.getHero().slides;
-
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     this.timer = window.setInterval(() => {
       this.next();

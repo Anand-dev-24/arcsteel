@@ -1,4 +1,4 @@
-import { Component, DOCUMENT, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, DOCUMENT, inject, OnInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ContentService } from '../../shared/services/content.service';
 import { FooterContact, FooterContent, FooterQuickLink } from '../../core/models/footer.model';
@@ -19,7 +19,6 @@ export class Footer implements OnInit {
   readonly year = new Date().getFullYear();
 
   private readonly document = inject(DOCUMENT);
-  private readonly platformId = inject(PLATFORM_ID);
   quickLinks: FooterQuickLink[] = [];
   contact!: FooterContact;
 
@@ -30,10 +29,6 @@ export class Footer implements OnInit {
   }
 
   scrollTo(id: string): void {
-
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     const section = this.document.getElementById(id);
 

@@ -2,7 +2,6 @@ import {
   Component,
   HostListener,
   inject,
-  PLATFORM_ID,
   signal
 } from '@angular/core';
 
@@ -27,7 +26,6 @@ interface MenuItem {
 export class Header {
 
   private readonly document = inject(DOCUMENT);
-  private readonly platformId = inject(PLATFORM_ID);
 
   readonly isMenuOpen = signal(false);
   readonly isScrolled = signal(false);
@@ -43,9 +41,6 @@ export class Header {
   @HostListener('window:scroll')
   onWindowScroll(): void {
 
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     this.isScrolled.set(window.scrollY > 20);
 
@@ -55,9 +50,6 @@ export class Header {
 
     this.isMenuOpen.update(value => !value);
 
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     this.document.body.style.overflow =
       this.isMenuOpen() ? 'hidden' : '';
@@ -68,9 +60,6 @@ export class Header {
 
     this.isMenuOpen.set(false);
 
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     this.document.body.style.overflow = '';
 
@@ -80,9 +69,6 @@ export class Header {
 
     this.closeMenu();
 
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
 
     const section = this.document.getElementById(id);
 
