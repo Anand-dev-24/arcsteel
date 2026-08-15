@@ -16,6 +16,10 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+defaults:
+  run:
+    working-directory: arc-steel
+
 jobs:
 
   build:
@@ -30,7 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: arc-steel/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -44,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/arc-steel
+          path: ./arc-steel/dist/arc-steel
 
   deploy:
     environment:
