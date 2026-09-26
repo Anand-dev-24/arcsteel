@@ -68,4 +68,8 @@ export class HomeHero implements OnInit, OnDestroy {
 
   }
 
+  goToSection(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
 }

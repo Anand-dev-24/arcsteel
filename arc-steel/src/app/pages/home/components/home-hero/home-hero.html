@@ -4,14 +4,11 @@
 
     @for (slide of heroSlides; track slide.title; let i = $index) {
 
-        <div
-            class="hero-slide"
-            [class.active]="i === currentIndex"
-            [style.background-image]="'url(' + slide.image + ')'">
+    <div class="hero-slide" [class.active]="i === currentIndex" [style.background-image]="'url(' + slide.image + ')'">
 
-            <div class="hero-overlay"></div>
+        <div class="hero-overlay"></div>
 
-        </div>
+    </div>
 
     }
 
@@ -41,17 +38,9 @@
 
             <div class="hero-buttons">
 
-                <button class="primary-btn">
+                <button class="primary-btn" (click)="goToSection(heroSlides[currentIndex]?.buttonId)">
 
                     {{ heroSlides[currentIndex]?.buttonText }}
-
-                </button>
-
-                <button
-                    class="secondary-btn"
-                    onclick="document.getElementById('services')?.scrollIntoView({behavior:'smooth'})">
-
-                    Our Services
 
                 </button>
 
@@ -63,9 +52,7 @@
 
     <!-- Previous -->
 
-    <button
-        class="hero-arrow left"
-        (click)="previous()">
+    <button class="hero-arrow left" (click)="previous()">
 
         <i class="bi bi-chevron-left"></i>
 
@@ -73,9 +60,7 @@
 
     <!-- Next -->
 
-    <button
-        class="hero-arrow right"
-        (click)="next()">
+    <button class="hero-arrow right" (click)="next()">
 
         <i class="bi bi-chevron-right"></i>
 
@@ -87,11 +72,8 @@
 
         @for (slide of heroSlides; track slide.image; let i = $index) {
 
-            <button
-                class="dot"
-                [class.active]="i === currentIndex"
-                (click)="goTo(i)">
-            </button>
+        <button class="dot" [class.active]="i === currentIndex" (click)="goTo(i)">
+        </button>
 
         }
 

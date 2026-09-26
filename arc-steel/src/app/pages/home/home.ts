@@ -5,6 +5,7 @@ import { HomeAboutPreview } from './components/home-about-preview/home-about-pre
 import { HomeServicesPreview } from './components/home-services-preview/home-services-preview';
 import { HomeProjectsPreview } from './components/home-projects-preview/home-projects-preview';
 import { HomeCta } from './components/home-cta/home-cta';
+import { HomeSoftwares } from './components/home-softwares/home-softwares';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { HomeCta } from './components/home-cta/home-cta';
     HomeHero,
     HomeServicesPreview,
     HomeProjectsPreview,
+    HomeSoftwares,
     HomeAboutPreview,
     HomeCta
   ],

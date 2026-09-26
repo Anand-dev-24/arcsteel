@@ -10,6 +10,7 @@ export interface HeroSlides {
 
     buttonText: string;
 
+    buttonId: string;
 }
 
 export interface Hero {

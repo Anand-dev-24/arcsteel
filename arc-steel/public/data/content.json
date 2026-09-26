@@ -6,42 +6,39 @@
                 "subtitle": "STRUCTURAL STEEL DETAILING",
                 "title": "Precision Steel Detailing Solutions",
                 "description": "Accurate shop drawings, erection drawings and BIM models delivered on time for fabricators and contractors worldwide.",
-                "buttonText": "Learn More"
+                "buttonText": "View Services",
+                "buttonId": "services"
             },
             {
                 "image": "images/hero/hero_2.jpg",
                 "subtitle": "BIM MODELLING",
                 "title": "Intelligent 3D Steel Modelling",
                 "description": "High-quality BIM models that improve coordination, reduce clashes and accelerate project delivery.",
-                "buttonText": "Our Services"
+                "buttonText": "View Services",
+                "buttonId": "services"
             },
             {
                 "image": "images/hero/hero_3.jpg",
-                "subtitle": "SHOP DRAWINGS",
-                "title": "Fabrication Ready Drawings",
-                "description": "Detailed fabrication drawings prepared according to AISC, NISD and international standards.",
-                "buttonText": "View Projects"
+                "subtitle": "INDUSTRIAL PROJECTS",
+                "title": "Precision Detailing for Industrial Facilities",
+                "description": "Complete structural steel detailing for industrial facilities, including fabrication drawings, GA drawings, erection drawings and connection detailing.",
+                "buttonText": "View Projects",
+                "buttonId": "projects"
             },
             {
                 "image": "images/hero/hero_4.jpg",
-                "subtitle": "GLOBAL DELIVERY",
-                "title": "Trusted Engineering Partner",
-                "description": "Supporting structural steel fabricators, consultants and contractors across the globe.",
-                "buttonText": "About Us"
-            },
-            {
-                "image": "images/hero/hero_5.jpg",
-                "subtitle": "QUALITY FIRST",
-                "title": "Engineering Excellence Delivered",
-                "description": "Committed to quality, accuracy and timely delivery for every structural steel project.",
-                "buttonText": "Contact Us"
+                "subtitle": "COMMERCIAL PROJECTS",
+                "title": "Accurate Detailing for Commercial Buildings",
+                "description": "Delivering coordinated BIM models and structural steel detailing packages for multi-storey commercial buildings with fabrication-ready documentation.",
+                "buttonText": "View Projects",
+                "buttonId": "projects"
             }
         ]
     },
     "about": {
-        "title": "About arc steel",
+        "title": "About Steelarc",
         "heading": "Delivering Precision in Structural Steel Detailing",
-        "description": "ARC Steel is a trusted structural steel detailing company delivering high-quality shop drawings, erection drawings, connection detailing and BIM modelling services to clients worldwide. We combine engineering expertise, advanced technology and strict quality standards to provide fabrication-ready drawings that reduce errors, save time and improve project execution.",
+        "description": "Steelarc is a trusted structural steel detailing company delivering high-quality shop drawings, erection drawings, connection detailing and BIM modelling services to clients worldwide. We combine engineering expertise, advanced technology and strict quality standards to provide fabrication-ready drawings that reduce errors, save time and improve project execution.",
         "features": [
             {
                 "icon": "bi bi-building",
@@ -87,8 +84,7 @@
                 "points": [
                     "Moment Connections",
                     "Shear Connections",
-                    "Base Plate Details",
-                    "Connection Calculations"
+                    "Base Plate Details"
                 ]
             },
             {
@@ -98,7 +94,6 @@
                 "image": "images/services/service_3.jpg",
                 "description": "Accurate BIM models for clash detection, coordination and improved construction workflow.",
                 "points": [
-                    "LOD 300-500",
                     "Clash Detection",
                     "Coordination Models",
                     "IFC Deliverables"
@@ -187,22 +182,6 @@
             },
             {
                 "id": 3,
-                "shortTitle": "Power Plant",
-                "title": "Power Plant Expansion",
-                "image": "images/projects/project_4.jpg",
-                "location": "Australia",
-                "client": "Energy Company",
-                "area": "210,000 sq.ft",
-                "description": "Executed structural steel detailing for complex power plant structures with strict quality standards.",
-                "highlights": [
-                    "Complex Connections",
-                    "Heavy Steel",
-                    "Clash Detection",
-                    "3D Modelling"
-                ]
-            },
-            {
-                "id": 4,
                 "shortTitle": "Infrastructure",
                 "title": "Transportation Infrastructure",
                 "image": "images/projects/project_5.jpg",
@@ -216,6 +195,46 @@
                     "BIM Models",
                     "Site Coordination"
                 ]
+            }
+        ]
+    },
+    "softwareSection": {
+        "title": "SOFTWARE & TECHNOLOGY",
+        "heading": "Powered by Industry-Leading Software",
+        "description": "We work with leading structural steel detailing and BIM platforms to deliver accurate, fabrication-ready models and drawings for projects worldwide.",
+        "buttonText": "View Our Capabilities",
+        "softwares": [
+            {
+                "name": "Tekla Structures",
+                "logo": "images/software/tekla.png"
+            },
+            {
+                "name": "SDS2",
+                "logo": "images/software/sds2.png"
+            },
+            {
+                "name": "International Code Council",
+                "logo": "images/software/international-code-council.png"
+            },
+            {
+                "name": "American Welding Society",
+                "logo": "images/software/american-welding-society.png"
+            },
+            {
+                "name": "Steel Erectors Association Of America",
+                "logo": "images/software/steel-erectors-association-of-america.png"
+            },
+            {
+                "name": "Osha",
+                "logo": "images/software/osha.png"
+            },
+            {
+                "name": "Aisc",
+                "logo": "images/software/aisc.png"
+            },
+            {
+                "name": "Aisi",
+                "logo": "images/software/aisi.png"
             }
         ]
     },
@@ -237,7 +256,7 @@
         }
     },
     "footer": {
-        "description": "ARC Steel delivers high-quality Structural Steel Detailing, BIM Modelling, Shop Drawings and Connection Detailing services for fabricators, contractors and consultants worldwide.",
+        "description": "Steelarc delivers high-quality Structural Steel Detailing, BIM Modelling, Shop Drawings and Connection Detailing services for fabricators, contractors and consultants worldwide.",
         "linkedIn": "https://www.linkedin.com",
         "facebook": "https://www.facebook.com",
         "instagram": "https://www.instagram.com",

@@ -9,6 +9,7 @@ import { Service } from '../../core/models/service.model';
 import { Project } from '../../core/models/project.model';
 import { Contact } from '../../core/models/contact.model';
 import { FooterContent } from '../../core/models/footer.model';
+import { SoftwareSection } from '../../core/models/softwares.model';
 
 
 @Injectable({
@@ -40,6 +41,10 @@ export class ContentService {
 
   getFooter(): FooterContent {
     return this.data.footer;
+  }
+
+  getSoftwareSection(): SoftwareSection{
+    return this.data.softwareSection;
   }
 
 }
