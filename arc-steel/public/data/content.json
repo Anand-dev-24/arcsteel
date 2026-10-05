@@ -2,7 +2,7 @@
     "hero": {
         "slides": [
             {
-                "image": "images/hero/hero_1.jpg",
+                "image": "images/hero/services_steel_detailing.jpg",
                 "subtitle": "STRUCTURAL STEEL DETAILING",
                 "title": "Precision Steel Detailing Solutions",
                 "description": "Accurate shop drawings, erection drawings and BIM models delivered on time for fabricators and contractors worldwide.",
@@ -10,7 +10,7 @@
                 "buttonId": "services"
             },
             {
-                "image": "images/hero/hero_2.jpg",
+                "image": "images/hero/services_bim.jpg",
                 "subtitle": "BIM MODELLING",
                 "title": "Intelligent 3D Steel Modelling",
                 "description": "High-quality BIM models that improve coordination, reduce clashes and accelerate project delivery.",
@@ -18,7 +18,7 @@
                 "buttonId": "services"
             },
             {
-                "image": "images/hero/hero_3.jpg",
+                "image": "images/hero/projects_industries.jpg",
                 "subtitle": "INDUSTRIAL PROJECTS",
                 "title": "Precision Detailing for Industrial Facilities",
                 "description": "Complete structural steel detailing for industrial facilities, including fabrication drawings, GA drawings, erection drawings and connection detailing.",
@@ -26,7 +26,7 @@
                 "buttonId": "projects"
             },
             {
-                "image": "images/hero/hero_4.jpg",
+                "image": "images/hero/projects_commercial.jpg",
                 "subtitle": "COMMERCIAL PROJECTS",
                 "title": "Accurate Detailing for Commercial Buildings",
                 "description": "Delivering coordinated BIM models and structural steel detailing packages for multi-storey commercial buildings with fabrication-ready documentation.",
@@ -66,7 +66,7 @@
                 "id": 0,
                 "shortTitle": "Steel Detailing",
                 "title": "Structural Steel Detailing",
-                "image": "images/services/service_1.jpg",
+                "image": "images/services/services_steel_detailing.jpg",
                 "description": "We provide highly accurate structural steel detailing services using Tekla Structures and industry standards to produce fabrication-ready drawings.",
                 "points": [
                     "Fabrication Drawings",
@@ -79,7 +79,7 @@
                 "id": 1,
                 "shortTitle": "Connection",
                 "title": "Steel Connection Detailing",
-                "image": "images/services/service_2.jpg",
+                "image": "images/services/services_connection.jpg",
                 "description": "Detailed connection drawings ensuring safe fabrication and erection while reducing rework at site.",
                 "points": [
                     "Moment Connections",
@@ -91,7 +91,7 @@
                 "id": 2,
                 "shortTitle": "BIM",
                 "title": "BIM & 3D Modelling",
-                "image": "images/services/service_3.jpg",
+                "image": "images/services/services_bim.jpg",
                 "description": "Accurate BIM models for clash detection, coordination and improved construction workflow.",
                 "points": [
                     "Clash Detection",
@@ -103,7 +103,7 @@
                 "id": 3,
                 "shortTitle": "Shop Drawings",
                 "title": "Shop Drawings",
-                "image": "images/services/service_4.jpg",
+                "image": "images/services/services_shop_drawings.jpg",
                 "description": "Detailed shop drawings prepared for steel fabricators with complete dimensions and welding information.",
                 "points": [
                     "Assembly Drawings",
@@ -116,7 +116,7 @@
                 "id": 4,
                 "shortTitle": "Erection",
                 "title": "Erection Drawings",
-                "image": "images/services/service_5.jpg",
+                "image": "images/services/services_erection.jpg",
                 "description": "Professional erection drawings for safe and efficient on-site installation of structural steel.",
                 "points": [
                     "Sequence Drawings",
@@ -136,7 +136,7 @@
                 "id": 0,
                 "shortTitle": "Industrial",
                 "title": "Industrial Manufacturing Facility",
-                "image": "images/projects/project_1.jpg",
+                "image": "images/projects/projects_industries.jpg",
                 "location": "Texas, USA",
                 "client": "Global Steel Fabricator",
                 "area": "85,000 sq.ft",
@@ -152,7 +152,7 @@
                 "id": 1,
                 "shortTitle": "Commercial",
                 "title": "Commercial Office Building",
-                "image": "images/projects/project_2.jpg",
+                "image": "images/projects/projects_commercial.jpg",
                 "location": "Dubai, UAE",
                 "client": "Leading Contractor",
                 "area": "120,000 sq.ft",
@@ -168,7 +168,7 @@
                 "id": 2,
                 "shortTitle": "Warehouse",
                 "title": "Warehouse & Logistics Hub",
-                "image": "images/projects/project_3.jpg",
+                "image": "images/projects/projects_warehouse.jpg",
                 "location": "Germany",
                 "client": "Logistics Company",
                 "area": "160,000 sq.ft",
@@ -184,7 +184,7 @@
                 "id": 3,
                 "shortTitle": "Infrastructure",
                 "title": "Transportation Infrastructure",
-                "image": "images/projects/project_5.jpg",
+                "image": "images/projects/projects_infrastructures.jpg",
                 "location": "Singapore",
                 "client": "Infrastructure Contractor",
                 "area": "95,000 sq.ft",
